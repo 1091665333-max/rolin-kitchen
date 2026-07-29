@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
-<title>功能医学亚健康自测 | Rolin厨房</title>
+<title>人体功能系统健康自测 | Rolin的功能营养厨房</title>
 <style>
 :root {
   --bg: #faf9f6; --card: #ffffff; --text: #2c2c2c; --text-secondary: #999;
@@ -63,11 +63,11 @@ body {
 .q-card:last-of-type { border-radius: 8px 8px 10px 10px; margin-bottom: 4px; }
 .q-text { font-size: 13px; margin-bottom: 7px; line-height: 1.5; }
 .q-num { color: var(--text-secondary); font-size: 11px; margin-right: 3px; }
-.q-options { display: flex; gap: 6px; }
+.q-options { display: flex; gap: 4px; }
 .q-opt { flex: 1; text-align: center; }
 .q-opt input { display: none; }
-.q-opt label { display: block; padding: 9px 2px; border-radius: 8px; border: 1.5px solid var(--border); font-size: 12px; cursor: pointer; transition: all 0.15s; background: #fafaf8; user-select: none; }
-.q-opt label .opt-emoji { font-size: 20px; display: block; margin-bottom: 2px; }
+.q-opt label { display: block; padding: 8px 1px; border-radius: 8px; border: 1.5px solid var(--border); font-size: 11px; cursor: pointer; transition: all 0.15s; background: #fafaf8; user-select: none; }
+.q-opt label .opt-emoji { font-size: 18px; display: block; margin-bottom: 1px; }
 .q-opt label .opt-label { color: var(--text-secondary); font-size: 10px; }
 .q-opt input:checked + label { border-color: var(--accent); background: var(--accent-light); }
 .q-opt input:checked + label .opt-label { color: var(--accent); }
@@ -105,8 +105,8 @@ body {
 
 <div class="header" id="header">
   <div class="header-top">
-    <span class="header-brand">Rolin厨房</span>
-    <span class="header-title">功能医学亚健康自测</span>
+    <span class="header-brand">Rolin的功能营养厨房</span>
+    <span class="header-title">人体功能系统健康自测</span>
     <span class="header-right" id="hp">0/99</span>
   </div>
   <div class="progress-wrap"><div class="progress-fill" id="pf" style="width:0%"></div></div>
@@ -120,35 +120,35 @@ body {
 
 <script>
 const DIMS = [
-  {id:'d1',name:'能量系统',q:['早上醒来还是累，跟没睡一样','什么事都没做也觉得浑身没劲','稍微动一下就累，而且很久缓不过来','午饭后特别困，必须强撑或睡一觉','下午三四点不喝咖啡或不吃甜的就撑不住','对以前喜欢做的事也提不起兴趣','怕冷，比别人穿得多','运动后肌肉酸痛超过两天好不了','睡够了时间白天还是打不起精神','站起时头晕或眼前发黑'],max:20,
+  {id:'d1',name:'能量系统',q:['早上醒来还是累，跟没睡一样','什么事都没做也觉得浑身没劲','稍微动一下就累，而且很久缓不过来','午饭后特别困，必须强撑或睡一觉','下午三四点不喝咖啡或不吃甜的就撑不住','对以前喜欢做的事也提不起兴趣','怕冷，比别人穿得多','运动后肌肉酸痛超过两天好不了','睡够了时间白天还是打不起精神','站起时头晕或眼前发黑'],max:30,
    desc:'你累不累，累在什么时候，恢复得快不快——这三问比任何单项检查都更直接地揭示线粒体产能、HPA轴能量动员和甲状腺代谢基线这三大能量支柱的状态。'},
-  {id:'d2',name:'气血状态',q:['说话声音小，多说几句就觉得累','总觉得气不够用，老想深呼吸','稍微一动就出汗，汗后更累','下午感觉内脏往下坠（胃、小腹）','嘴唇颜色偏淡或发白','蹲下站起来眼前发黑，要缓一会','手指甲颜色偏白、没什么血色','月经颜色深、血块多（女性）','胸闷或两肋胀，情绪不好就加重','身体有固定位置的刺痛'],max:20,
+  {id:'d2',name:'气血状态',q:['说话声音小，多说几句就觉得累','总觉得气不够用，老想深呼吸','稍微一动就出汗，汗后更累','下午感觉内脏往下坠（胃、小腹）','嘴唇颜色偏淡或发白','蹲下站起来眼前发黑，要缓一会','手指甲颜色偏白、没什么血色','月经颜色深、血块多（女性）','胸闷或两肋胀，情绪不好就加重','身体有固定位置的刺痛'],max:30,
    desc:'气是推动力——从线粒体产能到呼吸肌力量。血是物质基础——从血红蛋白携氧到微循环灌注。气血系统是中国人最熟悉的自我描述框架，也是能量代谢+循环运输+营养底物三者的整合表达。'},
-  {id:'d3',name:'消化吸收与肠道',q:['饭后肚子胀，明显鼓起来','便秘，两三天甚至更久才排一次','大便不成形、偏稀或水样','有时便秘有时拉肚子，交替来','吃完东西肚子咕噜响、屁多','胃部灼热、喉咙泛酸，尤其躺下时','早上起来或饭后犯恶心','大便里能看到没消化的食物残渣','吃某些东西（奶、面、豆）之后明显不舒服','排气特别臭','口气重、舌苔厚腻','吃完饭后不停打嗝','排便总感觉没排干净','腹部隐隐不适，但说不上具体哪不舒服'],max:28,
+  {id:'d3',name:'消化吸收与肠道',q:['饭后肚子胀，明显鼓起来','便秘，两三天甚至更久才排一次','大便不成形、偏稀或水样','有时便秘有时拉肚子，交替来','吃完东西肚子咕噜响、屁多','胃部灼热、喉咙泛酸，尤其躺下时','早上起来或饭后犯恶心','大便里能看到没消化的食物残渣','吃某些东西（奶、面、豆）之后明显不舒服','排气特别臭','口气重、舌苔厚腻','吃完饭后不停打嗝','排便总感觉没排干净','腹部隐隐不适，但说不上具体哪不舒服'],max:42,
    desc:'从口腔到结肠，从消化酶到菌群到肠道屏障——这条7米长的管子是你全身最大的免疫器官，也是血清素和短链脂肪酸的工厂。'},
-  {id:'d4',name:'血糖代谢',q:['饭后一两个小时特别困，眼睛都睁不开','饿了就心慌、手抖、冒冷汗、烦躁','吃完饭两三个小时又饿得难受','特别想吃甜的或米饭面包，控制不住','腰围偏大（男≥90cm，女≥85cm）','减肥很难，控制饮食和运动效果也不大','小腿或脚踝容易水肿','体检有脂肪肝，或血糖/甘油三酯偏高'],max:16,
+  {id:'d4',name:'血糖代谢',q:['饭后一两个小时特别困，眼睛都睁不开','饿了就心慌、手抖、冒冷汗、烦躁','吃完饭两三个小时又饿得难受','特别想吃甜的或米饭面包，控制不住','腰围偏大（男≥90cm，女≥85cm）','减肥很难，控制饮食和运动效果也不大','小腿或脚踝容易水肿','体检有脂肪肝，或血糖/甘油三酯偏高'],max:24,
    desc:'空腹血糖正常不等于没有胰岛素抵抗。细胞层面的胰岛素抵抗可以在血糖异常之前5-10年就存在。这部分的症状是你每天餐后真实的「血糖过山车」体验。'},
-  {id:'d5',name:'脑健康（认知与情绪）',q:['脑子像蒙了一层雾，反应变慢，尤其在下午','注意力很难集中，看一页书都费劲','刚想到的事转眼就忘，总得靠记事本','情绪持续低落，也说不上为什么','容易紧张担心，身体总紧绷着','为小事就炸，事后自己也觉得反应过度','以前喜欢做的事现在也提不起劲','对声音、光线、人多的地方特别敏感','头痛变频繁了（每月两次以上）','社交意愿明显下降，从爱聚变成想独处'],max:20,
+  {id:'d5',name:'脑健康（认知与情绪）',q:['脑子像蒙了一层雾，反应变慢，尤其在下午','注意力很难集中，看一页书都费劲','刚想到的事转眼就忘，总得靠记事本','情绪持续低落，也说不上为什么','容易紧张担心，身体总紧绷着','为小事就炸，事后自己也觉得反应过度','以前喜欢做的事现在也提不起劲','对声音、光线、人多的地方特别敏感','头痛变频繁了（每月两次以上）','社交意愿明显下降，从爱聚变成想独处'],max:30,
    desc:'脑子不是独立器官。脑雾可能来自神经炎症、甲状腺不足、血糖波动、或色氨酸被炎症「偷走」。你思考的速度、情绪的稳定，每一个都在反映全身的生化状态。'},
-  {id:'d6',name:'炎症与免疫',q:['比别人容易感冒，一年超过四次','感冒后拖很久好不利索，超过两周','身体不明原因的酸痛——关节、肌肉、头痛','有季节性过敏，打喷嚏流鼻涕眼睛痒','皮肤时不时出红疹或风团','小伤口好得慢，一个小口子要一周以上','牙龈容易发炎出血','身上总有一种「低烧感」或隐隐的不舒服','对化学气味（香水、清洁剂、尾气）敏感','身体某个部位反复出问题，时好时坏，检查又正常'],max:20,
+  {id:'d6',name:'炎症与免疫',q:['比别人容易感冒，一年超过四次','感冒后拖很久好不利索，超过两周','身体不明原因的酸痛——关节、肌肉、头痛','有季节性过敏，打喷嚏流鼻涕眼睛痒','皮肤时不时出红疹或风团','小伤口好得慢，一个小口子要一周以上','牙龈容易发炎出血','身上总有一种「低烧感」或隐隐的不舒服','对化学气味（香水、清洁剂、尾气）敏感','身体某个部位反复出问题，时好时坏，检查又正常'],max:30,
    desc:'炎症不是敌人——敌人是「该关的时候关不掉」。慢性低度炎症的根源往往是消退信号不足。'},
-  {id:'d7',name:'内分泌系统（HPA·HPT·HPG）',q:['入睡困难，躺下半小时以上睡不着','半夜两三点醒，醒了就很难再睡','早上怎么都起不来，闹钟按掉好几次','手脚常年冰凉，暖不过来','性欲明显下降','月经不规律，周期变化超过7天（女性）','月经量明显减少，或干脆不来（女性）','经前情绪波动、乳房胀痛、头痛严重（女性）','安静时能感到心慌或心跳不规律','怕冷也怕热，温度适应能力差'],max:20,
+  {id:'d7',name:'内分泌系统（HPA·HPT·HPG）',q:['入睡困难，躺下半小时以上睡不着','半夜两三点醒，醒了就很难再睡','早上怎么都起不来，闹钟按掉好几次','手脚常年冰凉，暖不过来','性欲明显下降','月经不规律，周期变化超过7天（女性）','月经量明显减少，或干脆不来（女性）','经前情绪波动、乳房胀痛、头痛严重（女性）','安静时能感到心慌或心跳不规律','怕冷也怕热，温度适应能力差'],max:30,
    desc:'三轴共享一个基本结构：下丘脑→垂体→靶腺。皮质醇是最上位的压制者——它一出问题，甲状腺和性腺都被拖下水。'},
-  {id:'d8',name:'肝脏解毒与代谢',q:['脸色发黄、暗沉，没有光泽','喝了酒脸很红，或者一点就上头','咖啡或茶喝了容易心慌、不舒服','早上起来口苦或嘴里有怪味','皮肤容易出问题——长痘、发痒、起疹子','对香水、油烟、汽车尾气这些味道特别敏感','长期服用药物（避孕药、止痛药、抗生素等）'],max:14,
+  {id:'d8',name:'肝脏解毒与代谢',q:['脸色发黄、暗沉，没有光泽','喝了酒脸很红，或者一点就上头','咖啡或茶喝了容易心慌、不舒服','早上起来口苦或嘴里有怪味','皮肤容易出问题——长痘、发痒、起疹子','对香水、油烟、汽车尾气这些味道特别敏感','长期服用药物（避孕药、止痛药、抗生素等）'],max:21,
    desc:'肝脏每天处理来自食物、菌群、环境和自身代谢的数百种化合物。任何一个环节效率下降，代谢废物和毒素就会走「第二出路」——皮肤。'},
-  {id:'d9',name:'营养储备',q:['嘴唇干裂或嘴角反复裂开','口腔溃疡频繁发作（每月一次以上）','指甲脆弱、有竖纹、容易断裂','小腿或脚晚上抽筋','脱发明显——洗头梳头掉一大把','头发干枯没光泽、容易断','手臂外侧大腿上有一粒粒「鸡皮」','身上轻轻一碰就淤青','皮肤干燥粗糙，涂润肤霜也好不了多久','伤口好得慢','黑眼圈怎么睡都消不掉','脸色苍白或发黄，没有血色'],max:24,
+  {id:'d9',name:'营养储备',q:['嘴唇干裂或嘴角反复裂开','口腔溃疡频繁发作（每月一次以上）','指甲脆弱、有竖纹、容易断裂','小腿或脚晚上抽筋','脱发明显——洗头梳头掉一大把','头发干枯没光泽、容易断','手臂外侧大腿上有一粒粒「鸡皮」','身上轻轻一碰就淤青','皮肤干燥粗糙，涂润肤霜也好不了多久','伤口好得慢','黑眼圈怎么睡都消不掉','脸色苍白或发黄，没有血色'],max:36,
    desc:'毛囊、口腔黏膜、指甲、皮肤——这些是全身更新最快的组织。营养缺乏时身体优先供应心脑肝，它们首先被牺牲。这些「表面信号」是系统性营养缺乏滞后约3-6个月的窗口。'},
-  {id:'d10',name:'生活方式',q:['每晚睡眠不到7小时','每天的蔬菜摄入少于两碗','经常吃外卖、加工食品或甜饮料','每周运动不到两次，或几乎没有','长期处于高压或焦虑状态','每天看屏幕超过8小时','很少晒太阳，大部分时间在室内','抽烟或经常喝酒'],max:16,
+  {id:'d10',name:'生活方式',q:['每晚睡眠不到7小时','每天的蔬菜摄入少于两碗','经常吃外卖、加工食品或甜饮料','每周运动不到两次，或几乎没有','长期处于高压或焦虑状态','每天看屏幕超过8小时','很少晒太阳，大部分时间在室内','抽烟或经常喝酒'],max:24,
    desc:'以上九个系统的所有问题，根源都在这里。基因装好弹，生活方式扣下扳机。这部分是给你自己一个诚实的基线。'}
 ];
 
 let aq=[],qi=0;
 DIMS.forEach((d,di)=>{d.q.forEach((t,qi2)=>{aq.push({d,di,qi:qi2,gi:qi,t});qi++;});});
-const TQ=aq.length,TMX=198;
+const TQ=aq.length,TMX=297;
 
 let ans={};
-try{const s=localStorage.getItem('rolin_v3');if(s)ans=JSON.parse(s);}catch(e){}
-function sv(){try{localStorage.setItem('rolin_v3',JSON.stringify(ans));}catch(e){}}
+try{const s=localStorage.getItem('rolin_v4');if(s)ans=JSON.parse(s);}catch(e){}
+function sv(){try{localStorage.setItem('rolin_v4',JSON.stringify(ans));}catch(e){}}
 function ga(i){return ans[i]!==undefined?ans[i]:-1;}
 function sa(i,v){ans[i]=v;sv();}
 function gds(di){let s=0;DIMS[di].q.forEach((_,qi2)=>{const gi=aq.findIndex(q=>q.di===di&&q.qi===qi2);if(ans[gi]!==undefined)s+=ans[gi];});return s;}
@@ -160,7 +160,7 @@ let cv='form',od=null;
 function render(){if(cv==='results')rr();else rf();up();}
 function rf(){
   const m=document.getElementById('main');
-  let h=`<div class="welcome"><div class="welcome-icon">🧬</div><h1>功能医学亚健康自测</h1><p class="sub">10大系统 · 99项症状<br>基于功能医学系统论 + 气血辨证</p><div class="meta"><span>10个系统</span><span>99项</span><span>约8分钟</span></div><div class="rules-box" style="margin-top:12px;"><h3>📋 怎么填（近3个月）</h3><div class="rule-row"><span class="rule-emoji">😊</span> 基本没有</div><div class="rule-row"><span class="rule-emoji">😟</span> 有一点，偶尔困扰</div><div class="rule-row"><span class="rule-emoji">😫</span> 挺严重，经常或持续影响生活</div></div></div>`;
+  let h=`<div class="welcome"><div class="welcome-icon">🧬</div><h1>人体功能系统健康自测</h1><p class="sub">10大系统 · 99项症状<br>基于功能医学系统论 + 气血辨证</p><div class="meta"><span>10个系统</span><span>99项</span><span>约8分钟</span></div><div class="rules-box" style="margin-top:12px;"><h3>📋 怎么填（近3个月）</h3><div class="rule-row"><span class="rule-emoji">😊</span> 基本没有</div><div class="rule-row"><span class="rule-emoji">😐</span> 偶尔</div><div class="rule-row"><span class="rule-emoji">😟</span> 经常</div><div class="rule-row"><span class="rule-emoji">😫</span> 很严重</div></div></div>`;
   DIMS.forEach((d,di)=>{
     const an=gdac(di),sc=gds(di),io=od===di,ic=an===d.q.length;
     h+=`<div class="dim-section"><div class="dim-header${ic?' completed':''}${io?' open':''}" onclick="td(${di})" id="dh-${di}"><span class="dim-num">${di+1}</span><span class="dim-info"><span class="dim-name">${d.name}</span><span class="dim-meta">${d.q.length}题·满分${d.max}</span></span><span class="dim-score">${an===d.q.length?sc+'/'+d.max:an+'/'+d.q.length}</span><span class="dim-arrow">▶</span></div><div class="dim-body${io?' open':''}" id="db-${di}">`;
@@ -171,7 +171,7 @@ function rf(){
   m.innerHTML=h;ubb();
 }
 function rqc(gi,t,v){
-  const opts=[['😊','基本没有'],['😟','有一点'],['😫','挺严重']];
+  const opts=[['😊','基本没有'],['😐','偶尔'],['😟','经常'],['😫','很严重']];
   let h=`<div class="q-card"><div class="q-text"><span class="q-num">${gi+1}.</span>${t}</div><div class="q-options">`;
   opts.forEach((o,i)=>{h+=`<div class="q-opt"><input type="radio" name="q${gi}" id="q${gi}_${i}" value="${i}" ${v===i?'checked':''} onchange="oa(${gi},${i})"><label for="q${gi}_${i}"><span class="opt-emoji">${o[0]}</span><span class="opt-label">${o[1]}</span></label></div>`;});
   h+=`</div></div>`;return h;
@@ -191,15 +191,14 @@ function sr(){
 }
 function rr(){
   const sc=gts();let ge,gl,gc;
-  if(sc<=20){ge='🟢';gl='绿灯';gc='grade-green';}
-  else if(sc<=55){ge='🟡';gl='黄灯';gc='grade-yellow';}
-  else if(sc<=90){ge='🟠';gl='橙灯';gc='grade-orange';}
+  if(sc<=30){ge='🟢';gl='绿灯';gc='grade-green';}
+  else if(sc<=80){ge='🟡';gl='黄灯';gc='grade-yellow';}
+  else if(sc<=135){ge='🟠';gl='橙灯';gc='grade-orange';}
   else{ge='🔴';gl='红灯';gc='grade-red';}
 
   let dr=DIMS.map((d,di)=>{const s=gds(di);const rt=d.max>0?Math.round(s/d.max*100):0;return{d,di,score:s,rate:rt};});
   dr.sort((a,b)=>b.rate-a.rate);
 
-  // Detect pattern
   const r={};dr.forEach(d=>{r[d.di]=d.rate;});
   let pn=null;
   if([0,6,4].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='能量枯竭型';
@@ -211,13 +210,11 @@ function rr(){
   else if([8,0,4].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='营养亏空型';
   else if([9,0,4].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='生活方式驱动型';
 
-  // Render results
   let h=`<div class="results">`;
   h+=`<div class="result-card"><div class="result-emoji">${ge}</div><div class="result-label ${gc}">${gl}</div><div class="result-score">${sc} / ${TMX} 分</div>`;
   if(pn)h+=`<div class="result-pattern">${pn}</div>`;
   h+=`</div>`;
 
-  // Score bars
   h+=`<div class="bar-card"><h3>📊 各系统得分</h3>`;
   dr.forEach(d=>{
     const rc=d.rate>50?'var(--red)':d.rate>30?'var(--orange)':d.rate>15?'var(--yellow)':'var(--green)';
@@ -225,7 +222,6 @@ function rr(){
   });
   h+=`</div>`;
 
-  // CTA + Copy
   h+=`<div class="cta-box"><p>📤 截图或复制结果发给 Rolin</p><p class="sub">获取免费 1v1 功能医学饮食风险简评<br>（解读由人工完成，不自动展示）</p>`;
   h+=`<button class="btn btn-copy" onclick="copyResult()" style="margin-right:8px;">📋 一键复制结果</button>`;
   h+=`<button class="btn btn-sm btn-outline" onclick="bf()" style="margin-top:8px;">← 返回修改</button></div>`;
@@ -240,9 +236,9 @@ function bf(){cv='form';window.scrollTo(0,0);render();}
 
 function copyResult(){
   const sc=gts();let ge,gl;
-  if(sc<=20){ge='🟢';gl='绿灯';}
-  else if(sc<=55){ge='🟡';gl='黄灯';}
-  else if(sc<=90){ge='🟠';gl='橙灯';}
+  if(sc<=30){ge='🟢';gl='绿灯';}
+  else if(sc<=80){ge='🟡';gl='黄灯';}
+  else if(sc<=135){ge='🟠';gl='橙灯';}
   else{ge='🔴';gl='红灯';}
 
   let dr=DIMS.map((d,di)=>{const s=gds(di);const rt=d.max>0?Math.round(s/d.max*100):0;return{d,di,score:s,rate:rt};});
@@ -259,17 +255,28 @@ function copyResult(){
   else if([8,0,4].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='营养亏空型';
   else if([9,0,4].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='生活方式驱动型';
 
-  let txt=`【我的亚健康自测结果】\n${ge} ${gl} · ${sc}/${TMX} 分 · ${pn}\n\n`;
+  // Build symptom detail: for each system, list items scored 2 or 3
+  let detail='';
   dr.forEach(d=>{
+    const severeItems=[];
+    DIMS[d.di].q.forEach((t,qi2)=>{
+      const gi=aq.findIndex(qq=>qq.di===d.di&&qq.qi===qi2);
+      const v=ga(gi);
+      if(v===3)severeItems.push('😫 '+t);
+      else if(v===2)severeItems.push('😟 '+t);
+    });
     const rc=d.rate>50?'🔴':d.rate>30?'🟠':d.rate>15?'🟡':'🟢';
-    txt+=`${rc} ${d.d.name} ${d.score}/${d.d.max}（${d.rate}%）\n`;
+    detail+=`${rc} ${d.d.name} ${d.score}/${d.d.max}（${d.rate}%）\n`;
+    if(severeItems.length>0){
+      severeItems.forEach(si=>{detail+=`   ${si}\n`;});
+    }
   });
-  txt+=`\n—— Rolin厨房 · 功能医学亚健康自测\n发送给Rolin获取免费1v1解读`;
+
+  let txt=`【人体功能系统健康自测结果】\n${ge} ${gl} · ${sc}/${TMX} 分 · ${pn}\n\n${detail}\n—— Rolin的功能营养厨房\n发送给Rolin获取免费1v1解读`;
 
   if(navigator.clipboard){
     navigator.clipboard.writeText(txt).then(()=>st('已复制！去微信粘贴发给 Rolin')).catch(()=>st('复制失败，请截图发给 Rolin'));
   }else{
-    // Fallback
     const ta=document.createElement('textarea');
     ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
     document.body.appendChild(ta);ta.select();
@@ -281,9 +288,9 @@ function copyResult(){
 render();ubb();
 </script>
 <div class="footer">
-  <strong>Rolin厨房</strong> · 功能医学营养主理人<br>
+  <strong>Rolin的功能营养厨房</strong> · 功能医学营养主理人<br>
   用功能医学原理，把工位变成养生局<br><br>
-  <span style="color:var(--text-secondary);">本自测表为健康管理工具，不构成医学诊断。<br>结果解读由 Rolin 人工完成。</span>
+  <span style="color:var(--text-secondary);">本自测表为健康管理工具，不构成医学诊断。<br>结果解读由人工完成。</span>
 </div>
 </body>
 </html>
