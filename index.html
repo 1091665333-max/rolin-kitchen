@@ -11,7 +11,6 @@
   --accent: #b8754a; --accent-light: #f5ede6; --border: #e8e4df;
   --shadow: 0 1px 3px rgba(0,0,0,0.04);
   --green: #6a9b7d; --yellow: #c4973b; --orange: #c46e3b; --red: #b84a4a;
-  --progress-bg: #ebe7e2;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { font-size: 16px; -webkit-tap-highlight-color: transparent; }
@@ -23,85 +22,83 @@ body {
 .header {
   position: sticky; top: 0; z-index: 100;
   background: rgba(250,249,246,0.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border); padding: 12px 16px;
+  border-bottom: 1px solid var(--border); padding: 10px 16px;
 }
-.header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
 .header-brand { font-size: 12px; color: var(--accent); font-weight: 600; }
-.header-title { font-size: 15px; font-weight: 600; }
+.header-title { font-size: 14px; font-weight: 600; }
 .header-right { font-size: 12px; color: var(--text-secondary); }
-.progress-bar-wrap { height: 3px; background: var(--progress-bg); border-radius: 2px; }
-.progress-bar-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.3s ease; }
-.main { padding: 16px; max-width: 640px; margin: 0 auto; }
-.welcome { text-align: center; padding: 28px 8px 16px; }
-.welcome-icon { font-size: 44px; margin-bottom: 12px; }
-.welcome h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
-.welcome .sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.7; }
-.welcome .meta span { display: inline-block; background: var(--accent-light); color: var(--accent); padding: 3px 10px; border-radius: 16px; margin: 2px; font-size: 12px; }
-.rules-box { background: var(--card); border-radius: 12px; padding: 16px; text-align: left; margin-bottom: 20px; box-shadow: var(--shadow); border: 1px solid var(--border); }
-.rules-box h3 { font-size: 14px; margin-bottom: 10px; }
-.rule-row { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 6px; font-size: 13px; color: var(--text-secondary); }
-.rule-score { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; }
-.btn { display: inline-block; padding: 13px 40px; border-radius: 24px; font-size: 15px; font-weight: 600; border: none; cursor: pointer; transition: all 0.2s; -webkit-appearance: none; background: var(--accent); color: #fff; box-shadow: 0 2px 8px rgba(184,117,74,0.2); }
+.progress-wrap { height: 3px; background: #ebe7e2; border-radius: 2px; }
+.progress-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.3s; }
+.main { padding: 14px; max-width: 640px; margin: 0 auto; }
+.welcome { text-align: center; padding: 24px 4px 12px; }
+.welcome-icon { font-size: 40px; margin-bottom: 10px; }
+.welcome h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.welcome .sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.6; }
+.welcome .meta span { display: inline-block; background: var(--accent-light); color: var(--accent); padding: 2px 9px; border-radius: 14px; margin: 2px; font-size: 11px; }
+.rules-box { background: var(--card); border-radius: 12px; padding: 14px; text-align: left; margin-bottom: 16px; box-shadow: var(--shadow); border: 1px solid var(--border); }
+.rules-box h3 { font-size: 13px; margin-bottom: 8px; }
+.rule-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 13px; color: var(--text-secondary); }
+.rule-emoji { font-size: 18px; width: 28px; text-align: center; }
+.btn { display: inline-block; padding: 12px 36px; border-radius: 22px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; transition: all 0.2s; -webkit-appearance: none; background: var(--accent); color: #fff; box-shadow: 0 2px 8px rgba(184,117,74,0.2); }
 .btn:active { transform: scale(0.97); opacity: 0.9; }
-.btn-sm { padding: 8px 20px; font-size: 13px; border-radius: 20px; }
+.btn-sm { padding: 8px 20px; font-size: 13px; border-radius: 18px; }
 .btn-outline { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); box-shadow: none; }
-.dim-section { margin-bottom: 10px; }
-.dim-header { background: var(--card); border-radius: 12px; padding: 14px 16px; box-shadow: var(--shadow); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.2s; }
+.btn-copy { background: #3c3c3c; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.dim-section { margin-bottom: 8px; }
+.dim-header { background: var(--card); border-radius: 12px; padding: 12px 14px; box-shadow: var(--shadow); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.2s; }
 .dim-header:active { background: #faf8f5; }
 .dim-header.completed { border-left: 3px solid var(--green); }
-.dim-num { width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0; background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; }
+.dim-num { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; }
 .dim-info { flex: 1; min-width: 0; }
 .dim-name { font-size: 14px; font-weight: 600; }
-.dim-meta { font-size: 11px; color: var(--text-secondary); margin-top: 1px; }
+.dim-meta { font-size: 11px; color: var(--text-secondary); }
 .dim-score { font-size: 12px; color: var(--accent); font-weight: 600; white-space: nowrap; }
-.dim-arrow { font-size: 12px; color: var(--text-secondary); transition: transform 0.2s; }
+.dim-arrow { font-size: 11px; color: var(--text-secondary); transition: transform 0.2s; }
 .dim-header.open .dim-arrow { transform: rotate(90deg); }
 .dim-body { display: none; }
 .dim-body.open { display: block; }
-.dim-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.6; padding: 10px 14px; background: #fdfaf7; margin: 0 4px; border-radius: 0 0 8px 8px; }
-.q-card { background: var(--card); margin: 4px 4px 0; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); }
-.q-card:last-of-type { border-radius: 8px 8px 12px 12px; margin-bottom: 4px; }
-.q-text { font-size: 14px; margin-bottom: 8px; line-height: 1.5; }
-.q-num { color: var(--text-secondary); font-size: 11px; margin-right: 4px; }
+.dim-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.6; padding: 8px 12px; background: #fdfaf7; margin: 0 4px; border-radius: 0 0 8px 8px; }
+.q-card { background: var(--card); margin: 3px 4px 0; padding: 11px 13px; border-radius: 8px; border: 1px solid var(--border); }
+.q-card:last-of-type { border-radius: 8px 8px 10px 10px; margin-bottom: 4px; }
+.q-text { font-size: 13px; margin-bottom: 7px; line-height: 1.5; }
+.q-num { color: var(--text-secondary); font-size: 11px; margin-right: 3px; }
 .q-options { display: flex; gap: 6px; }
 .q-opt { flex: 1; text-align: center; }
 .q-opt input { display: none; }
 .q-opt label { display: block; padding: 9px 2px; border-radius: 8px; border: 1.5px solid var(--border); font-size: 12px; cursor: pointer; transition: all 0.15s; background: #fafaf8; user-select: none; }
-.q-opt label .opt-score { font-size: 15px; font-weight: 700; display: block; margin-bottom: 1px; }
+.q-opt label .opt-emoji { font-size: 20px; display: block; margin-bottom: 2px; }
 .q-opt label .opt-label { color: var(--text-secondary); font-size: 10px; }
-.q-opt input:checked + label { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+.q-opt input:checked + label { border-color: var(--accent); background: var(--accent-light); }
 .q-opt input:checked + label .opt-label { color: var(--accent); }
-.results { padding: 12px 0; }
-.result-header { text-align: center; padding: 24px 16px; border-radius: 16px; margin-bottom: 16px; }
-.result-grade { font-size: 44px; font-weight: 800; margin-bottom: 2px; }
-.result-label { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
-.result-desc { font-size: 13px; line-height: 1.7; padding: 0 4px; }
-.grade-green { background: #edf5f0; color: var(--green); }
-.grade-yellow { background: #faf6ed; color: var(--yellow); }
-.grade-orange { background: #faf1ea; color: var(--orange); }
-.grade-red { background: #faecec; color: var(--red); }
-.dim-bar-wrap { margin-bottom: 10px; }
-.dim-bar-label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 3px; }
-.dim-bar-name { font-weight: 500; }
-.dim-bar-score { color: var(--text-secondary); font-size: 12px; }
-.dim-bar-track { height: 8px; background: #ebe7e2; border-radius: 4px; overflow: hidden; }
-.dim-bar-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
-.pattern-card { background: var(--card); border-radius: 12px; padding: 14px; margin-bottom: 10px; border: 1px solid var(--border); box-shadow: var(--shadow); }
-.pattern-card h4 { font-size: 14px; margin-bottom: 4px; }
-.pattern-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
-.cross-card { background: #fdfaf7; border-radius: 12px; padding: 14px; margin-bottom: 10px; border: 1px solid var(--accent-light); }
-.cross-card h4 { font-size: 13px; color: var(--accent); margin-bottom: 4px; }
-.cross-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
-.cta-box { text-align: center; margin-top: 20px; padding: 18px; background: var(--accent-light); border-radius: 12px; }
-.cta-box p { font-size: 13px; color: var(--accent); margin-bottom: 6px; font-weight: 600; }
-.cta-box .sub { font-size: 12px; color: var(--text-secondary); margin-bottom: 14px; }
+.results { padding: 8px 0; }
+.result-card { background: var(--card); border-radius: 16px; padding: 24px 18px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 16px; }
+.result-emoji { font-size: 48px; margin-bottom: 6px; }
+.result-label { font-size: 18px; font-weight: 700; margin-bottom: 2px; }
+.result-score { font-size: 14px; color: var(--text-secondary); margin-bottom: 4px; }
+.result-pattern { display: inline-block; background: var(--accent-light); color: var(--accent); padding: 4px 14px; border-radius: 14px; font-size: 13px; font-weight: 600; margin-top: 8px; }
+.bar-card { background: var(--card); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; box-shadow: var(--shadow); border: 1px solid var(--border); }
+.bar-card h3 { font-size: 14px; margin-bottom: 10px; }
+.bar-row { margin-bottom: 8px; }
+.bar-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 2px; }
+.bar-name { font-weight: 500; }
+.bar-score { color: var(--text-secondary); font-size: 11px; }
+.bar-track { height: 7px; background: #ebe7e2; border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 4px; transition: width 0.6s; }
+.cta-box { text-align: center; background: var(--accent-light); border-radius: 14px; padding: 20px 16px; margin-bottom: 16px; }
+.cta-box p { font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 4px; }
+.cta-box .sub { font-size: 12px; color: var(--text-secondary); margin-bottom: 14px; font-weight: 400; }
 .bottom-bar { position: sticky; bottom: 0; background: rgba(250,249,246,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--border); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; z-index: 100; }
-.bottom-bar .score-summary { font-size: 13px; color: var(--text-secondary); }
-.bottom-bar .score-summary strong { color: var(--accent); font-size: 15px; }
-.footer { text-align: center; padding: 20px 16px 32px; font-size: 11px; color: var(--text-secondary); }
+.bottom-bar .bb-text { font-size: 12px; color: var(--text-secondary); }
+.bottom-bar .bb-text strong { color: var(--accent); font-size: 14px; }
+.footer { text-align: center; padding: 16px 16px 28px; font-size: 11px; color: var(--text-secondary); }
 .footer strong { color: var(--accent); }
-.toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: rgba(44,44,44,0.85); color: #fff; font-size: 12px; padding: 8px 18px; border-radius: 16px; z-index: 200; opacity: 0; transition: opacity 0.25s; pointer-events: none; }
+.toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: rgba(44,44,44,0.85); color: #fff; font-size: 13px; padding: 10px 22px; border-radius: 18px; z-index: 200; opacity: 0; transition: opacity 0.25s; pointer-events: none; }
 .toast.show { opacity: 1; }
+.grade-green { color: var(--green); }
+.grade-yellow { color: var(--yellow); }
+.grade-orange { color: var(--orange); }
+.grade-red { color: var(--red); }
 </style>
 </head>
 <body>
@@ -110,153 +107,183 @@ body {
   <div class="header-top">
     <span class="header-brand">Rolin厨房</span>
     <span class="header-title">功能医学亚健康自测</span>
-    <span class="header-right" id="header-progress">0/89</span>
+    <span class="header-right" id="hp">0/99</span>
   </div>
-  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-fill" style="width:0%"></div></div>
+  <div class="progress-wrap"><div class="progress-fill" id="pf" style="width:0%"></div></div>
 </div>
-
 <div class="main" id="main"></div>
-<div class="bottom-bar" id="bottom-bar" style="display:none">
-  <div class="score-summary">已答 <strong id="bb-answered">0</strong> / 89 题</div>
-  <button class="btn btn-sm" onclick="showResults()">查看结果 →</button>
+<div class="bottom-bar" id="bb" style="display:none">
+  <div class="bb-text">已答 <strong id="bba">0</strong> / 99 题</div>
+  <button class="btn btn-sm" onclick="sr()">查看结果 →</button>
 </div>
 <div class="toast" id="toast"></div>
 
 <script>
-const DIMENSIONS = [
-  {
-    id:'d1',name:'能量系统',qCount:10,maxScore:30,
-    desc:'你累不累，累在什么时候，恢复得快不快——这三问比任何单项检查都更直接地揭示线粒体产能、HPA轴能量动员和甲状腺代谢基线这三大能量支柱的状态。',
-    questions:['早上醒来还是累，跟没睡一样','什么事都没做也觉得浑身没劲','稍微动一下就累，而且很久缓不过来','午饭后特别困，必须强撑或睡一觉','下午三四点不喝咖啡或不吃甜的就撑不住','对以前喜欢做的事也提不起兴趣','怕冷，比别人穿得多','运动后肌肉酸痛超过两天好不了','睡够了时间白天还是打不起精神','站起时头晕或眼前发黑']
-  },
-  {
-    id:'d2',name:'消化吸收与肠道',qCount:14,maxScore:42,
-    desc:'从口腔到结肠，从消化酶到菌群到肠道屏障——这条7米长的管子是你全身最大的免疫器官，也是血清素和短链脂肪酸的工厂。',
-    questions:['饭后肚子胀，明显鼓起来','便秘，两三天甚至更久才排一次','大便不成形、偏稀或水样','有时便秘有时拉肚子，交替来','吃完东西肚子咕噜响、屁多','胃部灼热、喉咙泛酸，尤其躺下时','早上起来或饭后犯恶心','大便里能看到没消化的食物残渣','吃某些东西（奶、面、豆）之后明显不舒服','排气特别臭','口气重、舌苔厚腻','吃完饭后不停打嗝','排便总感觉没排干净','腹部隐隐不适，但说不上具体哪不舒服']
-  },
-  {
-    id:'d3',name:'血糖代谢',qCount:8,maxScore:24,
-    desc:'空腹血糖正常不等于没有胰岛素抵抗。细胞层面的胰岛素抵抗可以在血糖异常之前5-10年就存在。这部分的症状是你每天餐后真实的「血糖过山车」体验。',
-    questions:['饭后一两个小时特别困，眼睛都睁不开','饿了就心慌、手抖、冒冷汗、烦躁','吃完饭两三个小时又饿得难受','特别想吃甜的或米饭面包，控制不住','腰围偏大（男≥90cm，女≥85cm）','减肥很难，控制饮食和运动效果也不大','小腿或脚踝容易水肿','体检有脂肪肝，或血糖/甘油三酯偏高']
-  },
-  {
-    id:'d4',name:'脑健康（认知与情绪）',qCount:10,maxScore:30,
-    desc:'脑子不是独立器官。脑雾可能来自神经炎症、甲状腺不足、血糖波动、或色氨酸被炎症「偷走」。你思考的速度、情绪的稳定，每一个都在反映全身的生化状态。',
-    questions:['脑子像蒙了一层雾，反应变慢，尤其在下午','注意力很难集中，看一页书都费劲','刚想到的事转眼就忘，总得靠记事本','情绪持续低落，也说不上为什么','容易紧张担心，身体总紧绷着','为小事就炸，事后自己也觉得反应过度','以前喜欢做的事现在也提不起劲','对声音、光线、人多的地方特别敏感','头痛变频繁了（每月两次以上）','社交意愿明显下降，从爱聚变成想独处']
-  },
-  {
-    id:'d5',name:'炎症与免疫',qCount:10,maxScore:30,
-    desc:'炎症不是敌人——敌人是「该关的时候关不掉」。慢性低度炎症的根源往往是消退信号不足：EPA/DHA→SPM消退介质这条通路被卡住了。',
-    questions:['比别人容易感冒，一年超过四次','感冒后拖很久好不利索，超过两周','身体不明原因的酸痛——关节、肌肉、头痛','有季节性过敏，打喷嚏流鼻涕眼睛痒','皮肤时不时出红疹或风团','小伤口好得慢，一个小口子要一周以上','牙龈容易发炎出血','身上总有一种「低烧感」或隐隐的不舒服','对化学气味（香水、清洁剂、尾气）敏感','身体某个部位反复出问题，时好时坏，检查又正常']
-  },
-  {
-    id:'d6',name:'内分泌系统（HPA·HPT·HPG）',qCount:10,maxScore:30,
-    desc:'三轴共享一个基本结构：下丘脑→垂体→靶腺。皮质醇是最上位的压制者——它一出问题，甲状腺和性腺都被拖下水。',
-    questions:['入睡困难，躺下半小时以上睡不着','半夜两三点醒，醒了就很难再睡','早上怎么都起不来，闹钟按掉好几次','手脚常年冰凉，暖不过来','性欲明显下降','月经不规律，周期变化超过7天（女性）','月经量明显减少，或干脆不来（女性）','经前情绪波动、乳房胀痛、头痛严重（女性）','安静时能感到心慌或心跳不规律','怕冷也怕热，温度适应能力差']
-  },
-  {
-    id:'d7',name:'肝脏解毒与代谢',qCount:7,maxScore:21,
-    desc:'肝脏每天处理来自食物、菌群、环境和自身代谢的数百种化合物。任何一个环节效率下降，代谢废物和毒素就会走「第二出路」——皮肤。',
-    questions:['脸色发黄、暗沉，没有光泽','喝了酒脸很红，或者一点就上头','咖啡或茶喝了容易心慌、不舒服','早上起来口苦或嘴里有怪味','皮肤容易出问题——长痘、发痒、起疹子','对香水、油烟、汽车尾气这些味道特别敏感','长期服用药物（避孕药、止痛药、抗生素等）']
-  },
-  {
-    id:'d8',name:'营养储备',qCount:12,maxScore:36,
-    desc:'毛囊、口腔黏膜、指甲、皮肤——这些是全身更新最快的组织。营养缺乏时身体优先供应心脑肝，它们首先被牺牲。你身上这些「表面信号」是系统性营养缺乏滞后约3-6个月的窗口。',
-    questions:['嘴唇干裂或嘴角反复裂开','口腔溃疡频繁发作（每月一次以上）','指甲脆弱、有竖纹、容易断裂','小腿或脚晚上抽筋','脱发明显——洗头梳头掉一大把','头发干枯没光泽、容易断','手臂外侧大腿上有一粒粒「鸡皮」','身上轻轻一碰就淤青','皮肤干燥粗糙，涂润肤霜也好不了多久','伤口好得慢','黑眼圈怎么睡都消不掉','脸色苍白或发黄，没有血色']
-  },
-  {
-    id:'d9',name:'生活方式',qCount:8,maxScore:24,
-    desc:'以上八个系统的所有问题，根源都在这里。基因装好弹，生活方式扣下扳机。这部分是给你自己一个诚实的基线。',
-    questions:['每晚睡眠不到7小时','每天的蔬菜摄入少于两碗','经常吃外卖、加工食品或甜饮料','每周运动不到两次，或几乎没有','长期处于高压或焦虑状态','每天看屏幕超过8小时','很少晒太阳，大部分时间在室内','抽烟或经常喝酒']
-  }
+const DIMS = [
+  {id:'d1',name:'能量系统',q:['早上醒来还是累，跟没睡一样','什么事都没做也觉得浑身没劲','稍微动一下就累，而且很久缓不过来','午饭后特别困，必须强撑或睡一觉','下午三四点不喝咖啡或不吃甜的就撑不住','对以前喜欢做的事也提不起兴趣','怕冷，比别人穿得多','运动后肌肉酸痛超过两天好不了','睡够了时间白天还是打不起精神','站起时头晕或眼前发黑'],max:20,
+   desc:'你累不累，累在什么时候，恢复得快不快——这三问比任何单项检查都更直接地揭示线粒体产能、HPA轴能量动员和甲状腺代谢基线这三大能量支柱的状态。'},
+  {id:'d2',name:'气血状态',q:['说话声音小，多说几句就觉得累','总觉得气不够用，老想深呼吸','稍微一动就出汗，汗后更累','下午感觉内脏往下坠（胃、小腹）','嘴唇颜色偏淡或发白','蹲下站起来眼前发黑，要缓一会','手指甲颜色偏白、没什么血色','月经颜色深、血块多（女性）','胸闷或两肋胀，情绪不好就加重','身体有固定位置的刺痛'],max:20,
+   desc:'气是推动力——从线粒体产能到呼吸肌力量。血是物质基础——从血红蛋白携氧到微循环灌注。气血系统是中国人最熟悉的自我描述框架，也是能量代谢+循环运输+营养底物三者的整合表达。'},
+  {id:'d3',name:'消化吸收与肠道',q:['饭后肚子胀，明显鼓起来','便秘，两三天甚至更久才排一次','大便不成形、偏稀或水样','有时便秘有时拉肚子，交替来','吃完东西肚子咕噜响、屁多','胃部灼热、喉咙泛酸，尤其躺下时','早上起来或饭后犯恶心','大便里能看到没消化的食物残渣','吃某些东西（奶、面、豆）之后明显不舒服','排气特别臭','口气重、舌苔厚腻','吃完饭后不停打嗝','排便总感觉没排干净','腹部隐隐不适，但说不上具体哪不舒服'],max:28,
+   desc:'从口腔到结肠，从消化酶到菌群到肠道屏障——这条7米长的管子是你全身最大的免疫器官，也是血清素和短链脂肪酸的工厂。'},
+  {id:'d4',name:'血糖代谢',q:['饭后一两个小时特别困，眼睛都睁不开','饿了就心慌、手抖、冒冷汗、烦躁','吃完饭两三个小时又饿得难受','特别想吃甜的或米饭面包，控制不住','腰围偏大（男≥90cm，女≥85cm）','减肥很难，控制饮食和运动效果也不大','小腿或脚踝容易水肿','体检有脂肪肝，或血糖/甘油三酯偏高'],max:16,
+   desc:'空腹血糖正常不等于没有胰岛素抵抗。细胞层面的胰岛素抵抗可以在血糖异常之前5-10年就存在。这部分的症状是你每天餐后真实的「血糖过山车」体验。'},
+  {id:'d5',name:'脑健康（认知与情绪）',q:['脑子像蒙了一层雾，反应变慢，尤其在下午','注意力很难集中，看一页书都费劲','刚想到的事转眼就忘，总得靠记事本','情绪持续低落，也说不上为什么','容易紧张担心，身体总紧绷着','为小事就炸，事后自己也觉得反应过度','以前喜欢做的事现在也提不起劲','对声音、光线、人多的地方特别敏感','头痛变频繁了（每月两次以上）','社交意愿明显下降，从爱聚变成想独处'],max:20,
+   desc:'脑子不是独立器官。脑雾可能来自神经炎症、甲状腺不足、血糖波动、或色氨酸被炎症「偷走」。你思考的速度、情绪的稳定，每一个都在反映全身的生化状态。'},
+  {id:'d6',name:'炎症与免疫',q:['比别人容易感冒，一年超过四次','感冒后拖很久好不利索，超过两周','身体不明原因的酸痛——关节、肌肉、头痛','有季节性过敏，打喷嚏流鼻涕眼睛痒','皮肤时不时出红疹或风团','小伤口好得慢，一个小口子要一周以上','牙龈容易发炎出血','身上总有一种「低烧感」或隐隐的不舒服','对化学气味（香水、清洁剂、尾气）敏感','身体某个部位反复出问题，时好时坏，检查又正常'],max:20,
+   desc:'炎症不是敌人——敌人是「该关的时候关不掉」。慢性低度炎症的根源往往是消退信号不足。'},
+  {id:'d7',name:'内分泌系统（HPA·HPT·HPG）',q:['入睡困难，躺下半小时以上睡不着','半夜两三点醒，醒了就很难再睡','早上怎么都起不来，闹钟按掉好几次','手脚常年冰凉，暖不过来','性欲明显下降','月经不规律，周期变化超过7天（女性）','月经量明显减少，或干脆不来（女性）','经前情绪波动、乳房胀痛、头痛严重（女性）','安静时能感到心慌或心跳不规律','怕冷也怕热，温度适应能力差'],max:20,
+   desc:'三轴共享一个基本结构：下丘脑→垂体→靶腺。皮质醇是最上位的压制者——它一出问题，甲状腺和性腺都被拖下水。'},
+  {id:'d8',name:'肝脏解毒与代谢',q:['脸色发黄、暗沉，没有光泽','喝了酒脸很红，或者一点就上头','咖啡或茶喝了容易心慌、不舒服','早上起来口苦或嘴里有怪味','皮肤容易出问题——长痘、发痒、起疹子','对香水、油烟、汽车尾气这些味道特别敏感','长期服用药物（避孕药、止痛药、抗生素等）'],max:14,
+   desc:'肝脏每天处理来自食物、菌群、环境和自身代谢的数百种化合物。任何一个环节效率下降，代谢废物和毒素就会走「第二出路」——皮肤。'},
+  {id:'d9',name:'营养储备',q:['嘴唇干裂或嘴角反复裂开','口腔溃疡频繁发作（每月一次以上）','指甲脆弱、有竖纹、容易断裂','小腿或脚晚上抽筋','脱发明显——洗头梳头掉一大把','头发干枯没光泽、容易断','手臂外侧大腿上有一粒粒「鸡皮」','身上轻轻一碰就淤青','皮肤干燥粗糙，涂润肤霜也好不了多久','伤口好得慢','黑眼圈怎么睡都消不掉','脸色苍白或发黄，没有血色'],max:24,
+   desc:'毛囊、口腔黏膜、指甲、皮肤——这些是全身更新最快的组织。营养缺乏时身体优先供应心脑肝，它们首先被牺牲。这些「表面信号」是系统性营养缺乏滞后约3-6个月的窗口。'},
+  {id:'d10',name:'生活方式',q:['每晚睡眠不到7小时','每天的蔬菜摄入少于两碗','经常吃外卖、加工食品或甜饮料','每周运动不到两次，或几乎没有','长期处于高压或焦虑状态','每天看屏幕超过8小时','很少晒太阳，大部分时间在室内','抽烟或经常喝酒'],max:16,
+   desc:'以上九个系统的所有问题，根源都在这里。基因装好弹，生活方式扣下扳机。这部分是给你自己一个诚实的基线。'}
 ];
 
-let allQuestions=[],qIdx=0;
-DIMENSIONS.forEach((dim,di)=>{dim.questions.forEach((q,qi)=>{allQuestions.push({dim,di,qi,globalIndex:qIdx,text:q});qIdx++;});});
-const TOTAL_Q=allQuestions.length,TOTAL_MAX=267;
+let aq=[],qi=0;
+DIMS.forEach((d,di)=>{d.q.forEach((t,qi2)=>{aq.push({d,di,qi:qi2,gi:qi,t});qi++;});});
+const TQ=aq.length,TMX=198;
 
-let answers={};
-try{const s=localStorage.getItem('rolin_v2');if(s)answers=JSON.parse(s);}catch(e){}
-function save(){try{localStorage.setItem('rolin_v2',JSON.stringify(answers));}catch(e){}}
-function ga(gi){return answers[gi]!==undefined?answers[gi]:-1;}
-function sa(gi,v){answers[gi]=v;save();}
-function gds(di){let s=0;DIMENSIONS[di].questions.forEach((_,qi)=>{const gi=allQuestions.findIndex(q=>q.di===di&&q.qi===qi);if(answers[gi]!==undefined)s+=answers[gi];});return s;}
-function gts(){let t=0;for(let i=0;i<TOTAL_Q;i++){if(answers[i]!==undefined)t+=answers[i];}return t;}
-function gac(){return Object.keys(answers).length;}
-function gdac(di){let c=0;DIMENSIONS[di].questions.forEach((_,qi)=>{const gi=allQuestions.findIndex(q=>q.di===di&&q.qi===qi);if(answers[gi]!==undefined)c++;});return c;}
+let ans={};
+try{const s=localStorage.getItem('rolin_v3');if(s)ans=JSON.parse(s);}catch(e){}
+function sv(){try{localStorage.setItem('rolin_v3',JSON.stringify(ans));}catch(e){}}
+function ga(i){return ans[i]!==undefined?ans[i]:-1;}
+function sa(i,v){ans[i]=v;sv();}
+function gds(di){let s=0;DIMS[di].q.forEach((_,qi2)=>{const gi=aq.findIndex(q=>q.di===di&&q.qi===qi2);if(ans[gi]!==undefined)s+=ans[gi];});return s;}
+function gts(){let t=0;for(let i=0;i<TQ;i++){if(ans[i]!==undefined)t+=ans[i];}return t;}
+function gac(){return Object.keys(ans).length;}
+function gdac(di){let c=0;DIMS[di].q.forEach((_,qi2)=>{const gi=aq.findIndex(q=>q.di===di&&q.qi===qi2);if(ans[gi]!==undefined)c++;});return c;}
 
 let cv='form',od=null;
 function render(){if(cv==='results')rr();else rf();up();}
 function rf(){
   const m=document.getElementById('main');
-  let h=`<div class="welcome"><div class="welcome-icon">🧬</div><h1>功能医学亚健康自测</h1><p class="sub">9大系统 · 89项症状 · 深度画像<br>基于功能医学系统论框架</p><div class="meta"><span>9个系统</span><span>89项</span><span>约8分钟</span></div><div class="rules-box" style="margin-top:16px;"><h3>📋 怎么填</h3><div class="rule-row"><span class="rule-score">0</span> 基本没有</div><div class="rule-row"><span class="rule-score">1</span> 偶尔有，不影响生活</div><div class="rule-row"><span class="rule-score">2</span> 经常有，有点困扰</div><div class="rule-row"><span class="rule-score">3</span> 持续有，明显影响生活</div></div></div>`;
-  DIMENSIONS.forEach((dim,di)=>{
-    const an=gdac(di),sc=gds(di),io=od===di,ic=an===dim.qCount;
-    h+=`<div class="dim-section"><div class="dim-header${ic?' completed':''}${io?' open':''}" onclick="td(${di})" id="dh-${di}"><span class="dim-num">${di+1}</span><span class="dim-info"><span class="dim-name">${dim.name}</span><span class="dim-meta">${dim.qCount}题·满分${dim.maxScore}</span></span><span class="dim-score">${an===dim.qCount?sc+'/'+dim.maxScore:an+'/'+dim.qCount}</span><span class="dim-arrow">▶</span></div><div class="dim-body${io?' open':''}" id="db-${di}">`;
-    if(io){h+=`<div class="dim-desc">${dim.desc}</div>`;dim.questions.forEach((q,qi)=>{const gi=allQuestions.findIndex(qq=>qq.di===di&&qq.qi===qi);h+=rqc(gi,q,ga(gi));});}
+  let h=`<div class="welcome"><div class="welcome-icon">🧬</div><h1>功能医学亚健康自测</h1><p class="sub">10大系统 · 99项症状<br>基于功能医学系统论 + 气血辨证</p><div class="meta"><span>10个系统</span><span>99项</span><span>约8分钟</span></div><div class="rules-box" style="margin-top:12px;"><h3>📋 怎么填（近3个月）</h3><div class="rule-row"><span class="rule-emoji">😊</span> 基本没有</div><div class="rule-row"><span class="rule-emoji">😟</span> 有一点，偶尔困扰</div><div class="rule-row"><span class="rule-emoji">😫</span> 挺严重，经常或持续影响生活</div></div></div>`;
+  DIMS.forEach((d,di)=>{
+    const an=gdac(di),sc=gds(di),io=od===di,ic=an===d.q.length;
+    h+=`<div class="dim-section"><div class="dim-header${ic?' completed':''}${io?' open':''}" onclick="td(${di})" id="dh-${di}"><span class="dim-num">${di+1}</span><span class="dim-info"><span class="dim-name">${d.name}</span><span class="dim-meta">${d.q.length}题·满分${d.max}</span></span><span class="dim-score">${an===d.q.length?sc+'/'+d.max:an+'/'+d.q.length}</span><span class="dim-arrow">▶</span></div><div class="dim-body${io?' open':''}" id="db-${di}">`;
+    if(io){h+=`<div class="dim-desc">${d.desc}</div>`;d.q.forEach((t,qi2)=>{const gi=aq.findIndex(qq=>qq.di===di&&qq.qi===qi2);h+=rqc(gi,t,ga(gi));});}
     h+=`</div></div>`;
   });
-  h+=`<div style="text-align:center;margin-top:20px;"><button class="btn" onclick="sr()">查看我的结果 →</button></div><p style="text-align:center;font-size:11px;color:var(--text-secondary);margin-top:8px;">进度自动保存 · 可随时返回继续</p>`;
+  h+=`<div style="text-align:center;margin-top:16px;"><button class="btn" onclick="sr()">查看我的结果 →</button></div><p style="text-align:center;font-size:11px;color:var(--text-secondary);margin-top:6px;">进度自动保存 · 可随时返回继续</p>`;
   m.innerHTML=h;ubb();
 }
-function rqc(gi,t,v){const lb=['从不','偶尔','经常','持续'];let h=`<div class="q-card"><div class="q-text"><span class="q-num">${gi+1}.</span>${t}</div><div class="q-options">`;[0,1,2,3].forEach(x=>{h+=`<div class="q-opt"><input type="radio" name="q${gi}" id="q${gi}_${x}" value="${x}" ${v===x?'checked':''} onchange="oa(${gi},${x})"><label for="q${gi}_${x}"><span class="opt-score">${x}</span><span class="opt-label">${lb[x]}</span></label></div>`;});h+=`</div></div>`;return h;}
-function td(di){od=od===di?null:di;render();if(od!==null){setTimeout(()=>{const el=document.getElementById('db-'+od);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},80);}}
-function oa(gi,v){sa(gi,v);udh(gi);up();ubb();st('已保存 ✓');}
-function udh(gi){const q=allQuestions[gi],di=q.di,dim=DIMENSIONS[di],an=gdac(di),sc=gds(di),hd=document.getElementById('dh-'+di);if(!hd)return;if(an===dim.qCount)hd.classList.add('completed');else hd.classList.remove('completed');const el=hd.querySelector('.dim-score');if(el)el.textContent=an===dim.qCount?sc+'/'+dim.maxScore:an+'/'+dim.qCount;}
-function up(){const a=gac();document.getElementById('progress-fill').style.width=Math.round(a/TOTAL_Q*100)+'%';document.getElementById('header-progress').textContent=a+'/'+TOTAL_Q;}
-function ubb(){const b=document.getElementById('bottom-bar');if(cv==='form'){b.style.display='flex';document.getElementById('bb-answered').textContent=gac();}}
+function rqc(gi,t,v){
+  const opts=[['😊','基本没有'],['😟','有一点'],['😫','挺严重']];
+  let h=`<div class="q-card"><div class="q-text"><span class="q-num">${gi+1}.</span>${t}</div><div class="q-options">`;
+  opts.forEach((o,i)=>{h+=`<div class="q-opt"><input type="radio" name="q${gi}" id="q${gi}_${i}" value="${i}" ${v===i?'checked':''} onchange="oa(${gi},${i})"><label for="q${gi}_${i}"><span class="opt-emoji">${o[0]}</span><span class="opt-label">${o[1]}</span></label></div>`;});
+  h+=`</div></div>`;return h;
+}
+function td(di){od=od===di?null:di;render();if(od!==null){setTimeout(()=>{const e=document.getElementById('db-'+od);if(e)e.scrollIntoView({behavior:'smooth',block:'start'});},80);}}
+function oa(gi,v){sa(gi,v);udh(gi);up();ubb();}
+function udh(gi){const q=aq[gi],di=q.di,d=DIMS[di],an=gdac(di),sc=gds(di),hd=document.getElementById('dh-'+di);if(!hd)return;if(an===d.q.length)hd.classList.add('completed');else hd.classList.remove('completed');const el=hd.querySelector('.dim-score');if(el)el.textContent=an===d.q.length?sc+'/'+d.max:an+'/'+d.q.length;}
+function up(){const a=gac();document.getElementById('pf').style.width=Math.round(a/TQ*100)+'%';document.getElementById('hp').textContent=a+'/'+TQ;}
+function ubb(){const b=document.getElementById('bb');if(cv==='form'){b.style.display='flex';document.getElementById('bba').textContent=gac();}}
 let tt;function st(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),1200);}
-function sr(){const a=gac();if(a<50){if(!confirm('你只完成了 '+a+'/'+TOTAL_Q+' 题（'+Math.round(a/TOTAL_Q*100)+'%），未完成题目将计0分。确定查看吗？'))return;}cv='results';od=null;window.scrollTo(0,0);render();document.getElementById('bottom-bar').style.display='none';}
+
+// ====== RESULTS ======
+function sr(){
+  const a=gac();
+  if(a<60){if(!confirm('你只完成了 '+a+'/'+TQ+' 题（'+Math.round(a/TQ*100)+'%），未完成的计0分。确定查看吗？'))return;}
+  cv='results';od=null;window.scrollTo(0,0);render();document.getElementById('bb').style.display='none';
+}
 function rr(){
-  const sc=gts();let gc,ge,gl,gd;
-  if(sc<=30){gc='grade-green';ge='🟢';gl='绿灯';gd='你的功能状态良好。继续保持现在的饮食和生活方式，每年追踪一次即可。';}
-  else if(sc<=70){gc='grade-yellow';ge='🟡';gl='黄灯';gd='已有轻度亚健康信号。这正是功能医学最有价值的干预窗口——选得分率最高的2个系统，饮食调整3个月后复测。';}
-  else if(sc<=120){gc='grade-orange';ge='🟠';gl='橙灯';gd='多个系统发出明确求救信号。建议功能医学深度评估+3个系统同步干预。可以考虑Rolin的21天食物疗愈计划。';}
-  else{gc='grade-red';ge='🔴';gl='红灯';gd='显著生理负荷累积。建议优先完成医学排查排除器质性疾病，然后系统性地清理每一个瓶颈。当瓶颈清除得足够多，网络通量恢复，症状会逐个消退。';}
-  let h=`<div class="results"><div class="result-header ${gc}"><div class="result-grade">${ge}</div><div class="result-label">${gl} · ${sc} / ${TOTAL_MAX} 分</div><div class="result-desc">${gd}</div></div>`;
-  h+=`<h3 style="font-size:15px;margin-bottom:10px;">📊 各系统得分</h3>`;
-  let dr=DIMENSIONS.map((dim,di)=>{const s=gds(di);const rt=dim.maxScore>0?Math.round(s/dim.maxScore*100):0;return{dim,di,score:s,rate:rt};});
+  const sc=gts();let ge,gl,gc;
+  if(sc<=20){ge='🟢';gl='绿灯';gc='grade-green';}
+  else if(sc<=55){ge='🟡';gl='黄灯';gc='grade-yellow';}
+  else if(sc<=90){ge='🟠';gl='橙灯';gc='grade-orange';}
+  else{ge='🔴';gl='红灯';gc='grade-red';}
+
+  let dr=DIMS.map((d,di)=>{const s=gds(di);const rt=d.max>0?Math.round(s/d.max*100):0;return{d,di,score:s,rate:rt};});
   dr.sort((a,b)=>b.rate-a.rate);
-  dr.forEach(d=>{const rc=d.rate>50?'var(--red)':d.rate>30?'var(--orange)':d.rate>15?'var(--yellow)':'var(--green)';h+=`<div class="dim-bar-wrap"><div class="dim-bar-label"><span class="dim-bar-name">${d.dim.name}</span><span class="dim-bar-score">${d.score}/${d.dim.maxScore}（${d.rate}%）</span></div><div class="dim-bar-track"><div class="dim-bar-fill" style="width:${d.rate}%;background:${rc};"></div></div></div>`;});
-  h+=`<h3 style="font-size:15px;margin:20px 0 10px;">🔍 主导模式</h3>`;
-  const ps=dp(dr);
-  if(ps.length===0)h+=`<p style="font-size:13px;color:var(--text-secondary);">症状分布较均匀，没有单一主导模式。建议重点关注得分率最高的3个系统。</p>`;
-  else ps.forEach(p=>{h+=`<div class="pattern-card"><h4>${p.name}</h4><p>核心链路：${p.pathology}<br>Rolin厨房优先策略：${p.strategy}</p></div>`;});
-  h+=`<h3 style="font-size:15px;margin:20px 0 10px;">🔗 交叉洞察</h3>`;
-  const ins=gci(dr);
-  if(ins.length===0)h+=`<p style="font-size:13px;color:var(--text-secondary);">没有检测到显著的跨系统交叉模式。</p>`;
-  else ins.forEach(ci=>{h+=`<div class="cross-card"><h4>${ci.title}</h4><p>${ci.desc}</p></div>`;});
-  h+=`<div class="cta-box"><p>想了解你的个性化饮食干预方案？</p><p class="sub">把结果截图发给Rolin，免费获取1v1饮食风险简评</p><button class="btn btn-sm btn-outline" onclick="bf()">← 返回修改答案</button></div></div>`;
+
+  // Detect pattern
+  const r={};dr.forEach(d=>{r[d.di]=d.rate;});
+  let pn=null;
+  if([0,6,4].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='能量枯竭型';
+  else if([1,0,8].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='气血双亏型';
+  else if([2,5,4,8].reduce((s,di)=>s+(r[di]||0),0)/4>30)pn='肠道中心型';
+  else if([3,0,8].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='血糖过山车型';
+  else if([5,7,2].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='慢性炎症型';
+  else if([6,0,4].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='激素崩塌型';
+  else if([8,0,4].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='营养亏空型';
+  else if([9,0,4].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='生活方式驱动型';
+
+  // Render results
+  let h=`<div class="results">`;
+  h+=`<div class="result-card"><div class="result-emoji">${ge}</div><div class="result-label ${gc}">${gl}</div><div class="result-score">${sc} / ${TMX} 分</div>`;
+  if(pn)h+=`<div class="result-pattern">${pn}</div>`;
+  h+=`</div>`;
+
+  // Score bars
+  h+=`<div class="bar-card"><h3>📊 各系统得分</h3>`;
+  dr.forEach(d=>{
+    const rc=d.rate>50?'var(--red)':d.rate>30?'var(--orange)':d.rate>15?'var(--yellow)':'var(--green)';
+    h+=`<div class="bar-row"><div class="bar-label"><span class="bar-name">${d.d.name}</span><span class="bar-score">${d.score}/${d.d.max}（${d.rate}%）</span></div><div class="bar-track"><div class="bar-fill" style="width:${d.rate}%;background:${rc};"></div></div></div>`;
+  });
+  h+=`</div>`;
+
+  // CTA + Copy
+  h+=`<div class="cta-box"><p>📤 截图或复制结果发给 Rolin</p><p class="sub">获取免费 1v1 功能医学饮食风险简评<br>（解读由人工完成，不自动展示）</p>`;
+  h+=`<button class="btn btn-copy" onclick="copyResult()" style="margin-right:8px;">📋 一键复制结果</button>`;
+  h+=`<button class="btn btn-sm btn-outline" onclick="bf()" style="margin-top:8px;">← 返回修改</button></div>`;
+  h+=`</div>`;
+
   document.getElementById('main').innerHTML=h;
-  document.getElementById('header-progress').textContent='结果';
-  document.getElementById('progress-fill').style.width='100%';
+  document.getElementById('hp').textContent='结果';
+  document.getElementById('pf').style.width='100%';
 }
+
 function bf(){cv='form';window.scrollTo(0,0);render();}
-function dp(dr){const r={};dr.forEach(d=>{r[d.di]=d.rate;});const ps=[];
-  const ea=[0,5,3].reduce((s,di)=>s+(r[di]||0),0)/3;if(ea>30)ps.push({name:'能量枯竭型',pathology:'HPA轴耗竭→压制TSH和GnRH',strategy:'抗疲劳营养密度午餐——高蛋白+慢碳水+B族密集食材'});
-  const ga=[1,4,3,7].reduce((s,di)=>s+(r[di]||0),0)/4;if(ga>30)ps.push({name:'肠道中心型',pathology:'肠漏→LPS→全身低度炎症→营养吸收↓',strategy:'肠道修复午餐——山药/南瓜/发酵食物+低FODMAP+食物轮替'});
-  const ba=[2,0,7].reduce((s,di)=>s+(r[di]||0),0)/3;if(ba>30)ps.push({name:'血糖过山车型',pathology:'胰岛素抵抗→细胞饥饿→肾上腺反复救急',strategy:'控糖午餐——先菜后饭+蛋白≥25g+纤维≥8g'});
-  const ia=[4,6,1].reduce((s,di)=>s+(r[di]||0),0)/3;if(ia>30)ps.push({name:'慢性炎症型',pathology:'消退信号不足→炎症消不掉→肝负荷↑',strategy:'抗炎午餐——EPA/DHA密集+多酚彩虹+槲皮素+姜黄'});
-  const ha=[5,0,3].reduce((s,di)=>s+(r[di]||0),0)/3;if(ha>30)ps.push({name:'激素崩塌型',pathology:'皮质醇→压制甲状腺和性腺→全面减速',strategy:'甲功+肾上腺支持——碘/硒/锌/酪氨酸+血糖稳定+晨光'});
-  const na=[7,0,3].reduce((s,di)=>s+(r[di]||0),0)/3;if(na>30)ps.push({name:'营养亏空型',pathology:'原料不足→所有系统产能打折',strategy:'营养密度优先——动物肝脏/贝壳类/深绿色叶菜/每日1颗巴西坚果'});
-  const la=[8,0,3].reduce((s,di)=>s+(r[di]||0),0)/3;if(la>30)ps.push({name:'生活方式驱动型',pathology:'底层输入持续伤害→各系统被动应对',strategy:'先堵漏再加固——从一顿不重样的营养午餐开始'});
-  return ps;
+
+function copyResult(){
+  const sc=gts();let ge,gl;
+  if(sc<=20){ge='🟢';gl='绿灯';}
+  else if(sc<=55){ge='🟡';gl='黄灯';}
+  else if(sc<=90){ge='🟠';gl='橙灯';}
+  else{ge='🔴';gl='红灯';}
+
+  let dr=DIMS.map((d,di)=>{const s=gds(di);const rt=d.max>0?Math.round(s/d.max*100):0;return{d,di,score:s,rate:rt};});
+  dr.sort((a,b)=>b.rate-a.rate);
+
+  const r={};dr.forEach(d=>{r[d.di]=d.rate;});
+  let pn='未匹配';
+  if([0,6,4].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='能量枯竭型';
+  else if([1,0,8].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='气血双亏型';
+  else if([2,5,4,8].reduce((s,di)=>s+(r[di]||0),0)/4>30)pn='肠道中心型';
+  else if([3,0,8].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='血糖过山车型';
+  else if([5,7,2].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='慢性炎症型';
+  else if([6,0,4].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='激素崩塌型';
+  else if([8,0,4].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='营养亏空型';
+  else if([9,0,4].reduce((s,di)=>s+(r[di]||0),0)/3>30)pn='生活方式驱动型';
+
+  let txt=`【我的亚健康自测结果】\n${ge} ${gl} · ${sc}/${TMX} 分 · ${pn}\n\n`;
+  dr.forEach(d=>{
+    const rc=d.rate>50?'🔴':d.rate>30?'🟠':d.rate>15?'🟡':'🟢';
+    txt+=`${rc} ${d.d.name} ${d.score}/${d.d.max}（${d.rate}%）\n`;
+  });
+  txt+=`\n—— Rolin厨房 · 功能医学亚健康自测\n发送给Rolin获取免费1v1解读`;
+
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(txt).then(()=>st('已复制！去微信粘贴发给 Rolin')).catch(()=>st('复制失败，请截图发给 Rolin'));
+  }else{
+    // Fallback
+    const ta=document.createElement('textarea');
+    ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');st('已复制！去微信粘贴发给 Rolin');}catch(e){st('复制失败，请截图发给 Rolin');}
+    document.body.removeChild(ta);
+  }
 }
-function gci(dr){const r={};dr.forEach(d=>{r[d.di]=d.rate;});const ins=[];
-  if((r[1]||0)>30&&(r[4]||0)>30&&(r[3]||0)>30)ins.push({title:'肠-脑-免疫轴已激活',desc:'消化+炎症+脑雾同时高分——三个系统的症状共享一个肠道根源。修复肠道屏障是所有三个症状消退的第一优先。'});
-  if((r[0]||0)>30&&(r[5]||0)>30&&(r[2]||0)>30)ins.push({title:'疑似夜间低血糖循环',desc:'疲劳+睡眠中断+血糖波动——凌晨的皮质醇/肾上腺素脉冲把你从睡眠中拽出来。解决方案不是安眠药，是晚餐的宏量营养素结构调整。'});
-  if((r[0]||0)>30&&(r[7]||0)>30&&(r[5]||0)>30)ins.push({title:'甲减红旗信号',desc:'怕冷+营养缺乏体征+内分泌紊乱——即使TSH在「正常范围」，也需要进一步查FT3+FT4+rT3+TPO抗体。这是功能医学中最常见的被「正常范围」掩盖的问题。'});
-  if((r[4]||0)>30&&(r[1]||0)>30&&(r[6]||0)>30)ins.push({title:'组胺桶已满',desc:'过敏+腹胀+皮肤问题+化学敏感——肠道菌群产组胺+食物组胺+肥大细胞内源性组胺三重叠加。需要低组胺饮食+槲皮素，而非单纯吃抗组胺药。'});
-  if((r[0]||0)>40&&(r[4]||0)>30&&(r[3]||0)>30)ins.push({title:'ME/CFS模式线索',desc:'慢性疲劳+炎症感+脑雾+睡眠不恢复——免疫系统的「疾病行为」程序可能在初次触发后未能正常关闭。这是Rolin厨房炎症管理维度最重要的目标人群。'});
-  return ins;
-}
+
 render();ubb();
 </script>
-
 <div class="footer">
   <strong>Rolin厨房</strong> · 功能医学营养主理人<br>
   用功能医学原理，把工位变成养生局<br><br>
-  <span style="color:var(--text-secondary);">本自测表为健康管理工具，不构成医学诊断。</span>
+  <span style="color:var(--text-secondary);">本自测表为健康管理工具，不构成医学诊断。<br>结果解读由 Rolin 人工完成。</span>
 </div>
 </body>
 </html>
