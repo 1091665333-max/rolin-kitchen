@@ -8,9 +8,8 @@
 :root {
   --bg: #faf9f6; --card: #ffffff; --text: #2c2c2c;
   --text-secondary: #888; --text-tertiary: #b0b0b0;
-  --accent: #b8754a; --accent-light: #f5ede6; --accent-dark: #8b5a34;
-  --border: #e8e4df;
-  --green: #6a9b7d; --yellow: #c4973b; --orange: #c46e3b; --red: #c46e3b;
+  --accent: #b8754a; --accent-light: #f5ede6;
+  --border: #e8e4df; --shadow: 0 1px 3px rgba(0,0,0,0.04);
   --font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,91 +22,56 @@ body {
 
 /* Hero */
 .hero {
-  background: linear-gradient(160deg, #f5ede6 0%, #faf9f6 40%, #edf3ee 100%);
-  padding: 48px 20px 40px; text-align: center;
+  background: linear-gradient(165deg, #f5ede6 0%, #faf9f6 40%, #edf3ee 100%);
+  padding: 44px 20px 36px; text-align: center;
   border-bottom: 1px solid var(--border);
 }
 .hero-badge {
   display: inline-block; background: var(--accent); color: #fff;
-  font-size: 12px; font-weight: 600; padding: 4px 14px; border-radius: 14px;
-  letter-spacing: 1px; margin-bottom: 16px;
+  font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 12px;
+  letter-spacing: 1px; margin-bottom: 14px;
 }
-.hero h1 {
-  font-size: 28px; font-weight: 700; letter-spacing: 1px;
-  margin-bottom: 8px; color: var(--text); line-height: 1.3;
-}
-.hero .tagline {
-  font-size: 16px; color: var(--accent-dark); font-weight: 500;
-  margin-bottom: 16px; line-height: 1.6;
-}
-.hero .desc {
-  font-size: 14px; color: var(--text-secondary); max-width: 480px;
-  margin: 0 auto; line-height: 1.7;
-}
+.hero h1 { font-size: 26px; font-weight: 700; letter-spacing: 1px; margin-bottom: 6px; line-height: 1.3; }
+.hero .desc { font-size: 13px; color: var(--text-secondary); max-width: 460px; margin: 0 auto; line-height: 1.7; }
+.hero .quote { font-size: 14px; color: var(--accent); font-weight: 500; margin: 10px 0 4px; }
 
-/* Container */
 .container { max-width: 680px; margin: 0 auto; padding: 0 18px; }
 
-/* Section */
-.sec { padding: 32px 0; }
+/* Section headings */
+.sec { padding: 28px 0; }
 .sec + .sec { border-top: 1px solid var(--border); }
-.sec-num {
-  font-size: 11px; font-weight: 700; color: var(--accent);
-  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px;
-}
-.sec h2 {
-  font-size: 22px; font-weight: 700; margin-bottom: 8px;
-  letter-spacing: 0.5px;
-}
-.sec-subtitle {
-  font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6;
-}
+.sec h2 { font-size: 20px; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px; }
+.sec-intro { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
 
-/* Chapter 1: Myths */
-.myth-card {
-  background: var(--card); border-radius: 12px; padding: 20px;
-  margin-bottom: 14px; border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-}
-.myth-card h4 { font-size: 15px; margin-bottom: 6px; font-weight: 700; }
-.myth-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
-.before-after { margin-top: 8px; font-size: 13px; line-height: 1.8; }
-.before-after .bad { color: var(--red); }
-.before-after .good { color: var(--green); }
-
-/* Chapter 2: Type selector */
+/* Type cards */
 .type-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
 .type-card {
-  background: var(--card); border-radius: 10px; padding: 14px 16px;
-  border: 1px solid var(--border); display: flex; align-items: flex-start;
-  gap: 12px; transition: all 0.15s;
+  background: var(--card); border-radius: 10px; padding: 12px 14px;
+  border: 1px solid var(--border); display: flex; align-items: flex-start; gap: 10px;
 }
-.type-card:active { background: #fdfaf7; }
 .type-letter {
-  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
   background: var(--accent-light); color: var(--accent);
   display: flex; align-items: center; justify-content: center;
-  font-weight: 800; font-size: 16px;
+  font-weight: 800; font-size: 15px;
 }
 .type-body { flex: 1; min-width: 0; }
-.type-body .type-name { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+.type-body .type-name { font-size: 14px; font-weight: 700; }
 .type-body .type-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
 
-/* Chapter 3: Principles */
-.principle {
-  background: var(--card); border-radius: 10px; padding: 16px 18px;
-  margin-bottom: 10px; border: 1px solid var(--border);
+/* Strategy sub-sections */
+.strategy { margin-bottom: 24px; }
+.strategy h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.strategy .mechanism {
+  background: #fdfaf7; border-radius: 8px; padding: 12px 14px;
+  font-size: 13px; color: var(--text-secondary); line-height: 1.7;
+  margin-bottom: 12px; border: 1px solid var(--accent-light);
 }
-.principle h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
-.principle p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
-.principle .methods { margin-top: 8px; }
-.principle .method {
-  display: flex; gap: 10px; margin-bottom: 6px; font-size: 13px; line-height: 1.6;
-}
-.principle .method .icon { flex-shrink: 0; }
+.strategy .mechanism strong { color: var(--text); }
+.strategy h4 { font-size: 13px; font-weight: 700; margin: 14px 0 8px; color: var(--accent); }
 
 /* Tables */
-.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 14px 0; }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0 16px; }
 table {
   width: 100%; border-collapse: collapse; font-size: 13px;
   background: var(--card); border-radius: 10px; overflow: hidden;
@@ -115,99 +79,61 @@ table {
 }
 th {
   background: #fdfaf7; font-weight: 600; font-size: 12px;
-  color: var(--accent); text-align: left; padding: 10px 12px;
-  white-space: nowrap;
+  color: var(--accent); text-align: left; padding: 9px 10px; white-space: nowrap;
 }
-td { padding: 9px 12px; border-top: 1px solid var(--border); color: var(--text-secondary); line-height: 1.5; }
+td { padding: 8px 10px; border-top: 1px solid var(--border); color: var(--text-secondary); line-height: 1.5; }
 td:first-child { color: var(--text); font-weight: 500; white-space: nowrap; }
 
-/* Food lists */
-.food-section { margin-bottom: 20px; }
-.food-section h4 {
-  font-size: 14px; font-weight: 700; margin-bottom: 8px;
-  display: flex; align-items: center; gap: 6px;
-}
-.food-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.food-tag {
-  background: var(--card); border: 1px solid var(--border);
-  padding: 6px 12px; border-radius: 8px; font-size: 12px;
-  color: var(--text-secondary);
-}
-.food-tag.star5 { border-color: var(--accent); background: var(--accent-light); color: var(--accent); font-weight: 600; }
-
-/* Avoid list */
-.avoid-list { list-style: none; }
-.avoid-item {
-  display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border);
-  font-size: 13px; line-height: 1.6;
-}
-.avoid-item:last-child { border-bottom: none; }
-.avoid-badge {
-  flex-shrink: 0; font-size: 11px; font-weight: 700; padding: 2px 10px;
-  border-radius: 10px; white-space: nowrap;
-}
-.avoid-badge.ban { background: #faecec; color: var(--red); }
-.avoid-badge.warn { background: #faf6ed; color: var(--yellow); }
-
-/* Meal template */
-.meal-timeline { position: relative; padding-left: 24px; }
-.meal-timeline::before {
-  content: ''; position: absolute; left: 8px; top: 8px; bottom: 8px;
-  width: 2px; background: var(--border);
-}
-.meal-item { position: relative; margin-bottom: 16px; }
-.meal-item::before {
-  content: ''; position: absolute; left: -20px; top: 6px;
-  width: 10px; height: 10px; border-radius: 50%; background: var(--accent);
-}
-.meal-time { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.5px; }
-.meal-title { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
-.meal-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
-
-/* Recipe table special */
+/* Recipe table */
 .recipe-table td:first-child { font-weight: 700; color: var(--accent); }
+.recipe-table td:nth-child(2) { color: var(--text); }
 
-/* Timeline bar */
+/* Seven principles */
+.principles-table td:first-child {
+  font-weight: 700; color: var(--accent); font-size: 16px; text-align: center; width: 30px;
+}
+.principles-table td:nth-child(2) { color: var(--text); }
+.principles-table td:nth-child(3) { font-size: 12px; }
+
+/* Don't-do table */
+.dont-table td:first-child { font-weight: 700; color: var(--accent); text-align: center; width: 20px; }
+.dont-table td:nth-child(2) { color: var(--text); font-weight: 600; }
+
+/* Timeline */
 .timeline { position: relative; padding-left: 20px; }
-.timeline::before { content:''; position:absolute; left:6px; top:4px; bottom:4px; width:2px; background:var(--border); }
-.tl-item { position:relative; margin-bottom:10px; padding-left:12px; }
-.tl-item::before { content:''; position:absolute; left:-18px; top:8px; width:8px; height:8px; border-radius:50%; background:var(--accent); }
+.timeline::before {
+  content:''; position:absolute; left:6px; top:4px; bottom:4px;
+  width:2px; background:var(--border);
+}
+.tl-item { position:relative; margin-bottom:8px; padding-left:12px; }
+.tl-item::before {
+  content:''; position:absolute; left:-18px; top:8px;
+  width:8px; height:8px; border-radius:50%; background:var(--accent);
+}
 .tl-time { font-size:11px; color:var(--accent); font-weight:700; }
 .tl-text { font-size:13px; color:var(--text-secondary); }
 
-/* CTA */
-.cta {
-  background: var(--accent-light); border-radius: 16px; padding: 28px 20px;
-  text-align: center; margin: 24px 0;
+/* Snack note */
+.snack-note {
+  font-size:12px; color:var(--text-secondary);
+  line-height:1.8; margin-top:12px; padding-left:4px;
 }
-.cta h3 { font-size: 17px; color: var(--accent); margin-bottom: 6px; font-weight: 700; }
-.cta p { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.6; }
-.cta .btn {
-  display: inline-block; background: var(--accent); color: #fff;
-  padding: 12px 28px; border-radius: 22px; font-size: 14px; font-weight: 600;
-  text-decoration: none; transition: all 0.2s;
-}
-.cta .btn:active { transform: scale(0.97); opacity: 0.9; }
 
 /* Footer */
 .footer {
-  text-align: center; padding: 24px 20px 40px; font-size: 11px;
+  text-align: center; padding: 28px 20px 40px; font-size:11px;
   color: var(--text-tertiary); line-height: 1.8;
 }
 .footer strong { color: var(--accent); }
-
-/* Detail toggle */
-.detail-toggle {
-  font-size: 12px; color: var(--accent); cursor: pointer; font-weight: 600;
-  margin-top: 8px; display: inline-block; user-select: none;
+.footer .cta {
+  display: inline-block; background: var(--accent); color: #fff;
+  padding: 10px 24px; border-radius: 18px; font-size: 13px; font-weight: 600;
+  text-decoration: none; margin-top: 12px;
 }
-.detail-content { display: none; margin-top: 12px; }
-.detail-content.open { display: block; }
 
-/* Responsive */
 @media (min-width: 480px) {
   .type-grid { grid-template-columns: 1fr 1fr; }
-  .hero h1 { font-size: 32px; }
+  .hero h1 { font-size: 30px; }
 }
 </style>
 </head>
@@ -217,371 +143,343 @@ td:first-child { color: var(--text); font-weight: 500; white-space: nowrap; }
 <section class="hero">
   <div class="hero-badge">Rolin的功能营养厨房</div>
   <h1>抗疲劳饮食指南</h1>
-  <p class="tagline">吃进去的每一餐，都在为明天的精力投票。</p>
-  <p class="desc">在功能医学视角下，你下午三点的脑雾与疲惫，不是因为你不够努力，而是你的细胞在饮食中遭遇了"隐形炎症"与"能量断供"。这份指南带你跳出传统外卖陷阱，用科学的营养干预找回全天的高效精力。</p>
+  <p class="quote">功能医学视角 · 饮食干预方案</p>
+  <p class="desc">疲劳不是「累了睡一觉就好」。在功能医学中，慢性疲劳是 ATP（细胞能量货币）的供需持续失衡——休息后不能充分恢复，能量表始终停在 40-60%。这份指南帮助你识别疲劳类型，并给出每种类型的具体饮食策略。</p>
 </section>
 
-<!-- Chapter 1 -->
+<!-- 一、疲劳类型 -->
 <section class="sec">
   <div class="container">
-    <div class="sec-num">第一章</div>
-    <h2>破除三大误区</h2>
-    <p class="sec-subtitle">为什么你吃得清淡，人却越来越累？</p>
-
-    <div class="myth-card">
-      <h4>误区一：血糖过山车——吃完就困的元凶</h4>
-      <p>精制碳水（白米饭、白面条、含糖酱汁、甜饮料）让血糖快速飙升，引发胰岛素过量分泌，导致血糖急剧下跌。大脑瞬间缺糖，开启"断电保护"——这就是你下午秒困、脑雾的根源。</p>
-      <div class="before-after">
-        <span class="bad">❌ 白粥 + 馒头 → 血糖尖峰 → 胰岛素超额 → 血糖骤降 → 疲劳</span><br>
-        <span class="good">✅ 鸡蛋 + 牛油果 + 燕麦 → 血糖平缓 → 精力稳定</span>
-      </div>
-    </div>
-    <div class="myth-card">
-      <h4>误区二：长期单一食物——隐形过敏的温床</h4>
-      <p>天天吃水煮鸡胸肉配西兰花，不仅缺乏深层营养，还让肠道反复接触相同食物，诱发延迟性食物过敏，导致肠道屏障受损（肠漏），引发全身低度慢性炎症——你感觉到的"莫名疲惫"，有一部分来自肠道每天漏出的 LPS。</p>
-    </div>
-    <div class="myth-card">
-      <h4>误区三：唯卡路里论——细胞的"隐性饥饿"</h4>
-      <p>只盯着热量数字，忽视了营养密度。细胞制造能量（ATP）需要充足的 B 族维生素、镁、铁、辅酶 Q10 作为辅因子。缺乏这些，即使热量充足，线粒体也无法正常产能——身体被迫开启节能模式。<p>
-    </div>
-  </div>
-</section>
-
-<!-- Chapter 2 -->
-<section class="sec">
-  <div class="container">
-    <div class="sec-num">第二章</div>
-    <h2>你属于哪种疲劳？</h2>
-    <p class="sec-subtitle">疲劳不是单一原因。以下五种类型，选最像你的 1-2 个。大多数人混合了 2-3 种，选最困扰你的那个作为主攻方向。</p>
+    <h2>一、你的疲劳是哪一种？</h2>
+    <p class="sec-intro">选最像你的 1-2 个描述。大多数人混合了 2-3 种，选最困扰你的那个作为主攻方向。</p>
 
     <div class="type-grid">
       <div class="type-card">
         <div class="type-letter">A</div>
         <div class="type-body">
-          <div class="type-name">充电器坏了型</div>
-          <div class="type-desc">早晨最累，下午稍好但不恢复，靠咖啡续命<br><span style="color:var(--text-tertiary);">HPA轴节律紊乱 → 晨皮质醇不足</span></div>
+          <div class="type-name">HPA 轴型</div>
+          <div class="type-desc">早晨最累，下午稍好一点但从来不真正恢复，靠咖啡续命</div>
         </div>
       </div>
       <div class="type-card">
         <div class="type-letter">B</div>
         <div class="type-body">
-          <div class="type-name">电池容量缩水型</div>
-          <div class="type-desc">什么事不做也累，稍微动一下更累，恢复极慢<br><span style="color:var(--text-tertiary);">线粒体产能下降 → ATP 输出不足</span></div>
+          <div class="type-name">线粒体型</div>
+          <div class="type-desc">什么事都不做也累，稍微动一下更累，恢复极慢，肌肉酸痛</div>
         </div>
       </div>
       <div class="type-card">
         <div class="type-letter">C</div>
         <div class="type-body">
-          <div class="type-name">像一直在感冒型</div>
-          <div class="type-desc">疲劳伴肌肉酸痛、低烧感、咽喉不适<br><span style="color:var(--text-tertiary);">慢性免疫激活 → "疾病行为"程序未关闭</span></div>
+          <div class="type-name">炎症/免疫型</div>
+          <div class="type-desc">疲劳像在感冒——肌肉酸、喉咙不舒服、低烧感，持续几个月</div>
         </div>
       </div>
       <div class="type-card">
         <div class="type-letter">D</div>
         <div class="type-body">
-          <div class="type-name">没有火花型</div>
-          <div class="type-desc">不是不能动，是心里没有想去的动力<br><span style="color:var(--text-tertiary);">神经递质不足 → DA/NE 合成受阻</span></div>
+          <div class="type-name">神经递质型</div>
+          <div class="type-desc">不是身体不能动，是心里没有「想去做」的动力，对什么都提不起兴趣</div>
         </div>
       </div>
       <div class="type-card">
         <div class="type-letter">E</div>
         <div class="type-body">
-          <div class="type-name">饭后断电型</div>
-          <div class="type-desc">饭后特困，饿了心慌手抖，疯狂想吃甜食<br><span style="color:var(--text-tertiary);">胰岛素抵抗 → 血糖过山车 → 细胞饥饿</span></div>
+          <div class="type-name">代谢/血糖型</div>
+          <div class="type-desc">饭后特别困，不吃就心慌手抖，特别想吃甜食和碳水</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Chapter 3 -->
+<!-- 二、五种类型饮食策略 -->
 <section class="sec">
   <div class="container">
-    <div class="sec-num">第三章</div>
-    <h2>抗疲劳饮食五大核心原则</h2>
+    <h2>二、五种疲劳类型的饮食策略</h2>
 
-    <div class="principle">
-      <h4>原则一：血糖平稳——别让精力坐过山车</h4>
-      <p>血糖剧烈波动是全天精力崩溃的首要元凶。</p>
-      <div class="methods">
-        <div class="method"><span class="icon">🔸</span><span><strong>序贯进食法：</strong>先吃蔬菜 → 再吃蛋白质 → 最后吃碳水。这个顺序能降低餐后血糖峰值 30-40%。</span></div>
-        <div class="method"><span class="icon">🔸</span><span><strong>绝不"碳水裸奔"：</strong>每一口主食都搭配蛋白质或好脂肪。吃水果时配一小把核桃。</span></div>
-        <div class="method"><span class="icon">🔸</span><span><strong>升级碳水质量：</strong>白米白面 → 燕麦、藜麦、薯类、豆类、糙米。</span></div>
+    <!-- A型 -->
+    <div class="strategy">
+      <h3>A 型：HPA 轴疲劳——「充电器坏了」</h3>
+      <div class="mechanism">
+        <strong>在功能医学中发生了什么：</strong><br>
+        长期面临慢性压力，会打乱肾上腺皮质醇的正常节律。具体表现为：早晨本该升高的皮质醇无法正常上升，让人早上很难起床；而到了夜间本该降低的皮质醇又迟迟降不下来，从而引发入睡困难和半夜醒来。这实际上意味着，负责身体能量动员的 HPA 轴总开关出现了"卡壳"。
       </div>
-    </div>
-
-    <div class="principle">
-      <h4>原则二：每餐必有优质蛋白</h4>
-      <p>很多人早餐只有碳水——这是上午疲惫的第一个推手。蛋白质不只是增肌用的，在抗疲劳中，它是血糖稳定剂 + 神经递质前体 + 组织修复原料。</p>
-    </div>
-
-    <div class="principle">
-      <h4>原则三：精准抗炎——清除消耗精力的暗火</h4>
-      <p>慢性低度炎症干扰线粒体功能，并让大脑持续接收"你在生病"的信号。</p>
-      <div class="methods">
-        <div class="method"><span class="icon">🔸</span><span><strong>EPA/DHA 优先：</strong>每周 ≥3 次深海鱼。不是单纯抗炎，是促消退——发出"炎症可以结束了"的信号。</span></div>
-        <div class="method"><span class="icon">🔸</span><span><strong>多酚彩虹：</strong>每餐 ≥3 种颜色的蔬菜。每种颜色提供不同的抗炎分子组合。</span></div>
-        <div class="method"><span class="icon">🔸</span><span><strong>30 天食物轮替：</strong>不连续多天吃相同食物，帮助排查延迟性食物过敏原。</span></div>
-      </div>
-    </div>
-
-    <div class="principle">
-      <h4>原则四：修复肠道——从源头提升免疫力与精力</h4>
-      <p>肠道是全身最大的免疫器官。肠漏 → LPS 入血 → 全身低度炎症 → 疲劳。每周摄入 30 种以上植物来源（蔬菜、水果、豆类、坚果、香料），增加洋葱、大蒜、芦笋等益生元，搭配发酵食物和骨汤。</p>
-    </div>
-
-    <div class="principle">
-      <h4>原则五：线粒体充电——给 ATP 生产线补原料</h4>
-      <p>线粒体将食物转化为 ATP（能量），这个过程需要特定营养素作为辅酶。</p>
+      <h4>饮食策略：稳住血糖 + 补肾上腺原料</h4>
       <div class="table-wrap">
         <table>
-          <tr><th>营养素</th><th>作用</th><th>核心食物</th></tr>
-          <tr><td>B 族全谱</td><td>TCA 循环和 ETC 每一步的辅酶</td><td>全谷物、动物肝脏、鸡蛋、深绿色叶菜</td></tr>
-          <tr><td>镁</td><td>Mg-ATP 是 ATP 的活性形式</td><td>南瓜籽、杏仁、黑巧克力、菠菜</td></tr>
-          <tr><td>辅酶 Q10</td><td>电子传递链 I/II→III 的电子桥</td><td>牛肉（尤其心脏）、沙丁鱼、西兰花</td></tr>
-          <tr><td>铁</td><td>细胞色素（ETC）+ 血红蛋白（O₂）</td><td>动物肝脏、蛤蜊、牛肉</td></tr>
-          <tr><td>α-硫辛酸</td><td>万能抗氧化剂，促进线粒体再生</td><td>菠菜、西兰花、动物内脏</td></tr>
+          <tr><th>原则</th><th>具体做法</th></tr>
+          <tr><td>绝不空腹喝咖啡</td><td>咖啡因 → 皮质醇脉冲。先吃早餐再喝，或改在上午 10 点后</td></tr>
+          <tr><td>早餐必吃，起床 1 小时内</td><td>给 HPA 轴一个「天亮了、有燃料了」的信号</td></tr>
+          <tr><td>每餐蛋白 ≥20g</td><td>稳定血糖，减少肾上腺救急脉冲</td></tr>
+          <tr><td>睡前防低血糖</td><td>如果半夜醒，睡前一小块慢碳+蛋白</td></tr>
+        </table>
+      </div>
+      <h4>核心营养素 + 高含量食物</h4>
+      <div class="table-wrap">
+        <table>
+          <tr><th>营养素</th><th>为什么</th><th>吃什么</th></tr>
+          <tr><td>维生素 C</td><td>肾上腺是全身 VC 浓度最高的组织，慢性压力→VC 消耗↑</td><td>猕猴桃、红甜椒、西兰花、针叶樱桃</td></tr>
+          <tr><td>维生素 B5</td><td>辅酶 A 前体→胆固醇→皮质醇合成的第一步</td><td>牛肝、葵花籽、香菇、牛油果、鸡蛋</td></tr>
+          <tr><td>镁</td><td>支持 GABA 系统 → 抑制 HPA 过度激活</td><td>南瓜籽、杏仁、黑巧克力、菠菜</td></tr>
+          <tr><td>维生素 B12 + 叶酸</td><td>甲基化循环 → 肾上腺素合成</td><td>蛤蜊、动物肝脏、深绿色叶菜</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- B型 -->
+    <div class="strategy">
+      <h3>B 型：线粒体疲劳——「发电厂本身坏了」</h3>
+      <div class="mechanism">
+        <strong>在功能医学中发生了什么：</strong><br>
+        当线粒体电子传递链的五个复合体中，只要有一个效率下降，就会导致 ATP 产出不足。这通常由 B 族辅因子不足、辅酶Q10合成下降、心磷脂被活性氧氧化，或者是线粒体 DNA损伤积累所引起。最终的结果就像身体的电池容量变小了，只要稍微有一点消耗，就需要很长的时间才能恢复。
+      </div>
+      <h4>饮食策略：给 ETC 每一步补辅因子 + 抗氧化保护线粒体膜</h4>
+      <div class="table-wrap">
+        <table>
+          <tr><th>原则</th><th>具体做法</th></tr>
+          <tr><td>B 族全谱覆盖</td><td>TCA 循环和 ETC 的每一步都至少有一个 B 族做辅酶</td></tr>
+          <tr><td>抗氧化全层防御</td><td>VE（膜）+ VC（细胞质）+ 硒（线粒体 GPX）三层防线</td></tr>
+          <tr><td>足量 CoQ10 前体</td><td>CoQ10 将电子从复合体 I/II 传到 III，关键瓶颈</td></tr>
+        </table>
+      </div>
+      <h4>核心营养素 + 高含量食物</h4>
+      <div class="table-wrap">
+        <table>
+          <tr><th>营养素</th><th>为什么</th><th>吃什么</th></tr>
+          <tr><td>B1</td><td>丙酮酸脱氢酶 + α-酮戊二酸脱氢酶</td><td>葵花籽、猪肉、燕麦、扁豆</td></tr>
+          <tr><td>B2</td><td>FMN/FAD → 复合体 I 和 II</td><td>牛肝、鸡蛋、杏仁、蘑菇、菠菜</td></tr>
+          <tr><td>B3</td><td>NAD⁺ → 复合体 I + TCA 三个步骤</td><td>金枪鱼、鸡胸肉、花生、糙米</td></tr>
+          <tr><td>CoQ10</td><td>复合体 I/II → III 的电子桥</td><td>牛心、猪心、沙丁鱼、牛肉、西兰花</td></tr>
+          <tr><td>肉碱</td><td>长链脂肪酸穿梭进入线粒体 → β 氧化</td><td>牛肉、羊肉、猪肉</td></tr>
+          <tr><td>铁</td><td>细胞色素（ETC）+ 血红蛋白（O₂）+ 酪氨酸羟化酶（DA）</td><td>动物肝脏、蛤蜊、牛肉、菠菜</td></tr>
+          <tr><td>镁</td><td>Mg-ATP 是 ATP 的活性形式，缺镁=ATP 不被识别</td><td>南瓜籽、杏仁、菠菜、黑豆</td></tr>
+          <tr><td>VE + VC + 硒</td><td>三层抗氧化防线：膜→细胞质→线粒体</td><td>葵花籽+猕猴桃+巴西坚果</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- C型 -->
+    <div class="strategy">
+      <h3>C 型：炎症/免疫型疲劳——「疾病行为关不掉」</h3>
+      <div class="mechanism">
+        <strong>在功能医学中发生了什么：</strong><br>
+        身体在初次触发病毒感染后，免疫系统会激活表现为疲劳、嗜睡和社交回避的"疾病行为"程序。这个程序本该在感染清除后自动关闭，但实际上却没有关上，从而导致白介素-1β和肿瘤坏死因子-α持续处于低度释放状态。接着，干扰素-γ会持续激活 IDO，使得色氨酸被大量分流到了犬尿氨酸代谢通路中。这一改变直接导致体内 5-羟色胺和褪黑素减少，同时产生了具有 NMDA 兴奋毒性的喹啉酸。最终，无论是疲劳、情绪低落、脑雾还是睡眠差，全都是由这条被劫持的色氨酸通路引起的。
+      </div>
+      <h4>饮食策略：促消退（不只是抗炎）+ 减少色氨酸被盗</h4>
+      <div class="table-wrap">
+        <table>
+          <tr><th>原则</th><th>具体做法</th></tr>
+          <tr><td>EPA/DHA 优先</td><td>提供 SPM 消退介质前体 → 发出「炎症可以结束了」的信号</td></tr>
+          <tr><td>多酚抗炎谱</td><td>每餐 ≥3 种颜色的蔬菜水果，多靶点抑制 NF-κB</td></tr>
+          <tr><td>槲皮素</td><td>稳定肥大细胞膜 → 减少组胺和炎症介质释放</td></tr>
+          <tr><td>低组胺饮食试用</td><td>如果合并过敏/荨麻疹/鼻炎，4 周低组胺饮食</td></tr>
+        </table>
+      </div>
+      <h4>核心营养素 + 高含量食物</h4>
+      <div class="table-wrap">
+        <table>
+          <tr><th>营养素</th><th>为什么</th><th>吃什么</th></tr>
+          <tr><td>EPA/DHA</td><td>→ Resolvin/Maresin → 主动终止炎症</td><td>鲭鱼、三文鱼、沙丁鱼、凤尾鱼</td></tr>
+          <tr><td>姜黄素</td><td>抑制 IκB 激酶 → NF-κB 被锁在细胞质</td><td>姜黄 + 黑胡椒（吸收率 ↑2000%）</td></tr>
+          <tr><td>槲皮素</td><td>稳定肥大细胞 + 抑制 NF-κB/COX-2/5-LO</td><td>红洋葱、羽衣甘蓝、蓝莓、苹果皮</td></tr>
+          <tr><td>维生素 E</td><td>膜抗氧化 → 阻断 ROS → NF-κB</td><td>葵花籽、杏仁、牛油果、菠菜</td></tr>
+          <tr><td>硒</td><td>GPX → 将 H₂O₂ 还原为水 → 减少 NF-κB 激活</td><td>巴西坚果（每日 1 颗足矣）</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- D型 -->
+    <div class="strategy">
+      <h3>D 型：神经递质型疲劳——「没有火花」</h3>
+      <div class="mechanism">
+        <strong>在功能医学中发生了什么：</strong><br>
+        多巴胺水平下降，让人无法从日常活动中获得期待或愉悦，从而导致缺乏驱动力；去甲肾上腺素水平下降，使人难以维持警觉状态；乙酰胆碱水平下降，则会影响记忆和注意力的维持。这并不是因为懒，而是神经递质合成链条的某个环节卡住了。具体来说，从酪氨酸到左旋多巴、多巴胺再到去甲肾上腺素的这条通路，需要铁、维生素B6、锌、铜和维生素C作为辅因子；而从色氨酸到5-羟色胺的通路，则需要铁、维生素B6和维生素B3来作为辅因子。
+      </div>
+      <h4>饮食策略：提供神经递质前体 + 所有辅因子</h4>
+      <div class="table-wrap">
+        <table>
+          <tr><th>原则</th><th>具体做法</th></tr>
+          <tr><td>早餐高蛋白</td><td>提供酪氨酸（DA/NE 前体）和色氨酸（5-HT 前体）</td></tr>
+          <tr><td>铁 + B6 + 锌 + 铜 全配齐</td><td>四个辅因子缺一个，酪氨酸羟化酶（DA 合成限速酶）就卡住</td></tr>
+          <tr><td>鸡蛋不能丢</td><td>胆碱 → 乙酰胆碱（ACh）的前体</td></tr>
+        </table>
+      </div>
+      <h4>核心营养素 + 高含量食物</h4>
+      <div class="table-wrap">
+        <table>
+          <tr><th>营养素</th><th>为什么</th><th>吃什么</th></tr>
+          <tr><td>酪氨酸</td><td>DA + NE + 肾上腺素的前体</td><td>鸡胸肉、牛肉、三文鱼、鸡蛋、奶酪</td></tr>
+          <tr><td>铁</td><td>酪氨酸羟化酶（DA 合成限速酶）辅因子</td><td>动物肝脏、蛤蜊、牛肉</td></tr>
+          <tr><td>B6</td><td>DOPA 脱羧酶 → L-DOPA → DA</td><td>鹰嘴豆、金枪鱼、鸡胸肉、香蕉、土豆</td></tr>
+          <tr><td>锌</td><td>DA 囊泡转运 + 受体功能</td><td>牡蛎、牛肉、南瓜籽、芝麻</td></tr>
+          <tr><td>铜</td><td>多巴胺 β 羟化酶 → DA → NE</td><td>牛肝、牡蛎、芝麻、黑巧克力、蘑菇</td></tr>
+          <tr><td>胆碱</td><td>→ 乙酰胆碱（ACh）</td><td>鸡蛋（蛋黄）、牛肝、三文鱼</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- E型 -->
+    <div class="strategy">
+      <h3>E 型：代谢/血糖型疲劳——「富饶中的饥荒」</h3>
+      <div class="mechanism">
+        <strong>在功能医学中发生了什么：</strong><br>
+        出现胰岛素抵抗时，葡萄糖转运蛋白 4无法正常转位，导致葡萄糖虽然留在血液中却进不去细胞，使肌肉和大脑的线粒体陷入了能量饥荒。由于胰岛素第一时相减弱，饭后血糖会迅速冲高；随后，胰岛 β 细胞在第二时相进行超额且延迟的分泌，这就造成了餐后 2 到 4 小时血糖的过度回落，引发低血糖。面对低血糖，身体会紧急分泌肾上腺素和皮质醇来救急，从而让人出现心慌、手抖和烦躁等症状，并产生对碳水化合物的强烈渴望。为了缓解这种不适，人往往会忍不住去吃东西，从而陷入下一轮血糖过山车。这种反复出现的低血糖脉冲，会在数月到数年的时间里持续消耗肾上腺，最终导致 HPA 轴耗竭。
+      </div>
+      <h4>饮食策略：削平血糖过山车</h4>
+      <div class="table-wrap">
+        <table>
+          <tr><th>原则</th><th>具体做法</th></tr>
+          <tr><td>进食顺序</td><td>先吃菜 → 再吃蛋白 → 最后吃碳水（降低餐后血糖峰值 30-40%）</td></tr>
+          <tr><td>每餐蛋白 ≥25g + 纤维 ≥8g</td><td>蛋白 + 纤维双屏障延缓胃排空和葡萄糖吸收</td></tr>
+          <tr><td>碳水 GI 控制在 50 以下</td><td>薯类、燕麦、藜麦、豆类替代白米白面</td></tr>
+          <tr><td>肉桂 + 醋</td><td>肉桂改善胰岛素信号效率；醋延缓胃排空、抑制α-淀粉酶</td></tr>
+        </table>
+      </div>
+      <h4>核心营养素 + 高含量食物</h4>
+      <div class="table-wrap">
+        <table>
+          <tr><th>营养素</th><th>为什么</th><th>吃什么</th></tr>
+          <tr><td>铬</td><td>增强胰岛素受体信号 → 改善 GLUT4 转位</td><td>西兰花、全谷物、牛肉、啤酒酵母</td></tr>
+          <tr><td>镁</td><td>胰岛素受体酪氨酸激酶活性需要 Mg-ATP</td><td>南瓜籽、杏仁、菠菜</td></tr>
+          <tr><td>硫辛酸</td><td>直接改善胰岛素敏感性 + 抗氧化</td><td>动物肝脏、菠菜、西兰花</td></tr>
+          <tr><td>肉桂</td><td>延缓胃排空 + 改善胰岛素信号</td><td>肉桂粉（每日 1/2-1 小勺）</td></tr>
+          <tr><td>纤维</td><td>物理屏障延缓葡萄糖吸收</td><td>燕麦、豆类、薯类带皮吃</td></tr>
         </table>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Chapter 4 -->
+<!-- 三、七原则 -->
 <section class="sec">
   <div class="container">
-    <div class="sec-num">第四章</div>
-    <h2>"加油"食物清单</h2>
-    <p class="sec-subtitle">以下食物每天主动摄入，为你的线粒体、肠道和肾上腺提供原料。</p>
-
-    <div class="food-section">
-      <h4>🥩 优质蛋白质</h4>
-      <div class="food-tags">
-        <span class="food-tag star5">鸡蛋</span><span class="food-tag star5">三文鱼</span><span class="food-tag star5">牛肉</span><span class="food-tag star5">鸡胸肉</span><span class="food-tag star5">动物肝脏（每周1次）</span><span class="food-tag">蛤蜊</span><span class="food-tag">牡蛎</span><span class="food-tag">豆腐</span><span class="food-tag">鹰嘴豆</span><span class="food-tag">藜麦</span>
-      </div>
-    </div>
-
-    <div class="food-section">
-      <h4>🥑 优质脂肪</h4>
-      <div class="food-tags">
-        <span class="food-tag star5">深海鱼（每周3-4次）</span><span class="food-tag star5">牛油果</span><span class="food-tag star5">特级初榨橄榄油</span><span class="food-tag star5">巴西坚果（1颗/日）</span><span class="food-tag">核桃</span><span class="food-tag">南瓜籽</span><span class="food-tag">MCT油/椰子油</span>
-      </div>
-    </div>
-
-    <div class="food-section">
-      <h4>🥬 蔬菜与菌菇</h4>
-      <div class="food-tags">
-        <span class="food-tag star5">羽衣甘蓝</span><span class="food-tag star5">菠菜</span><span class="food-tag star5">西兰花</span><span class="food-tag star5">菌菇类</span><span class="food-tag">甜菜根</span><span class="food-tag">芦笋</span><span class="food-tag">卷心菜</span><span class="food-tag">芝麻菜</span>
-      </div>
-    </div>
-
-    <div class="food-section">
-      <h4>🫐 低升糖水果与调味品</h4>
-      <div class="food-tags">
-        <span class="food-tag star5">浆果（每日半杯）</span><span class="food-tag star5">姜黄+黑胡椒</span><span class="food-tag">石榴</span><span class="food-tag">樱桃</span><span class="food-tag">肉桂</span><span class="food-tag">生姜</span><span class="food-tag">苹果醋</span>
-      </div>
+    <h2>三、通用抗疲劳饮食七原则</h2>
+    <p class="sec-intro">不管你的主导类型是什么，这七条对所有人都适用。</p>
+    <div class="table-wrap">
+      <table class="principles-table">
+        <tr><th>#</th><th>原则</th><th>一句话解释</th></tr>
+        <tr><td>1</td><td>每餐蛋白 ≥20g</td><td>蛋白质不是「增肌用的」——在抗疲劳中，它是血糖稳定剂+神经递质前体+组织修复原料</td></tr>
+        <tr><td>2</td><td>颜色越多越好</td><td>每种颜色提供不同的多酚组合 → 在不同靶点抑制炎症</td></tr>
+        <tr><td>3</td><td>先吃菜再吃碳水</td><td>一个免费的餐后血糖减峰策略</td></tr>
+        <tr><td>4</td><td>深海鱼每周 ≥3 次</td><td>EPA/DHA 不仅是抗炎，更是促消退——发出「炎症可以结束了」的信号</td></tr>
+        <tr><td>5</td><td>戒断加工食品和甜饮料</td><td>高果糖→肝脂肪堆积；AGEs→氧化应激↑；乳化剂→肠道屏障损伤</td></tr>
+        <tr><td>6</td><td>水喝够</td><td>脱水状态下，血容量↓ → 心脏做功↑ + 脑灌注↓ → 疲劳的主观体验被放大</td></tr>
+        <tr><td>7</td><td>早餐必吃，睡前 3 小时吃完晚餐</td><td>给 HPA 轴和你自己的消化系统一个明确的节律锚点</td></tr>
+      </table>
     </div>
   </div>
 </section>
 
-<!-- Chapter 5 -->
+<!-- 四、7天食谱 -->
 <section class="sec">
   <div class="container">
-    <div class="sec-num">第五章</div>
-    <h2>"耗电"食物清单</h2>
-    <p class="sec-subtitle">以下食物会直接窃取你的能量，或给肝脏、肠道、肾上腺带来额外负荷。</p>
-
-    <ul class="avoid-list">
-      <li class="avoid-item">
-        <span class="avoid-badge ban">严格避免</span>
-        <span><strong>精制糖与高果糖浆</strong>——饮料、甜品、调味酸奶。引发"糖崩溃"+ 肝脏脂肪堆积。</span>
-      </li>
-      <li class="avoid-item">
-        <span class="avoid-badge ban">严格避免</span>
-        <span><strong>工业化种子油</strong>——大豆油、玉米油、人造黄油。Omega-6 过量，攻击线粒体膜。</span>
-      </li>
-      <li class="avoid-item">
-        <span class="avoid-badge ban">严格避免</span>
-        <span><strong>加工食品</strong>——饼干、糕点、方便面。剥夺 B 族 + AGEs 堆积 + 乳化剂损伤肠道。</span>
-      </li>
-      <li class="avoid-item">
-        <span class="avoid-badge warn">试行戒断</span>
-        <span><strong>麸质 + 乳制品（试用4周）</strong>——敏感者中，这些蛋白质激发免疫反应，让人"上瘾又疲劳"。</span>
-      </li>
-      <li class="avoid-item">
-        <span class="avoid-badge warn">大幅减少</span>
-        <span><strong>精制碳水</strong>——白米、白面、面包。升糖极快，B 族被剥夺。</span>
-      </li>
-      <li class="avoid-item">
-        <span class="avoid-badge warn">大幅减少</span>
-        <span><strong>酒精</strong>——乙醛损伤线粒体 DNA，干扰深度睡眠。</span>
-      </li>
-      <li class="avoid-item">
-        <span class="avoid-badge warn">控制</span>
-        <span><strong>咖啡因</strong>——每日 ≤1 杯，下午 2 点后不喝。咖啡因是逼迫肾上腺预支储备，不是产生能量。</span>
-      </li>
-    </ul>
-    <p style="font-size:12px;color:var(--text-secondary);margin-top:12px;">💡 选 1-2 项从明天开始戒断，4 周后评估精力变化。不要一次全戒——你会崩溃的。</p>
-  </div>
-</section>
-
-<!-- Chapter 6 -->
-<section class="sec">
-  <div class="container">
-    <div class="sec-num">第六章</div>
-    <h2>一日抗疲劳饮食模板</h2>
-
-    <div class="meal-timeline" style="margin-bottom:24px;">
-      <div class="meal-item">
-        <div class="meal-time">7:00 起床</div>
-        <div class="meal-title">400ml 温水 + 半个柠檬汁 + 一丢丢海盐</div>
-        <div class="meal-desc">启动代谢，支持肾上腺</div>
-      </div>
-      <div class="meal-item">
-        <div class="meal-time">7:30-8:30 早餐</div>
-        <div class="meal-title">蛋白质 + 好脂肪 + 慢碳水 + 蔬菜</div>
-        <div class="meal-desc">早餐必吃，起床 1 小时内。绝不空腹喝咖啡。<br>推荐：2个炒蛋（撒姜黄黑胡椒）+ 半个牛油果 + 煮紫薯/燕麦 + 嫩菠菜</div>
-      </div>
-      <div class="meal-item">
-        <div class="meal-time">12:00-13:00 午餐</div>
-        <div class="meal-title">1/2 蔬菜 + 1/4 蛋白质 + 1/4 慢碳水</div>
-        <div class="meal-desc">序贯进食：先菜→后肉→最后饭。<br>推荐：烤三文鱼/黑椒牛肉 + 羽衣甘蓝 + 紫甘蓝 + 甜菜根 + 藜麦 + 南瓜籽</div>
-      </div>
-      <div class="meal-item">
-        <div class="meal-time">15:30 加餐（仅饿时）</div>
-        <div class="meal-title">一小把杏仁 + 低糖水果</div>
-        <div class="meal-desc">或一杯温椰子水+海盐+柠檬汁（肾上腺支持特饮，替代咖啡）</div>
-      </div>
-      <div class="meal-item">
-        <div class="meal-time">18:00-19:00 晚餐</div>
-        <div class="meal-title">易消化蛋白 + 大量蔬菜 + 少量根茎</div>
-        <div class="meal-desc">晚餐碳水略减，睡前 3 小时吃完。<br>推荐：鸡胸肉与菌菇冬瓜清汤锅 + 西兰花 + 芦笋 + 铁棍山药</div>
-      </div>
-      <div class="meal-item">
-        <div class="meal-time">21:30 睡前</div>
-        <div class="meal-title">如有早醒：一小杯无糖杏仁奶 + 肉桂粉</div>
-        <div class="meal-desc">防夜间低血糖触发凌晨皮质醇脉冲</div>
-      </div>
-    </div>
-
-    <h3 style="font-size:16px;font-weight:700;margin-bottom:12px;">7 天早餐速查</h3>
+    <h2>四、7 天抗疲劳食谱示范</h2>
+    <p class="sec-intro">以下食谱基于 Rolin的功能营养厨房现有配方。假设你的主导类型是混合型。</p>
     <div class="table-wrap">
       <table class="recipe-table">
-        <tr><th>天</th><th>早餐</th><th>午餐</th><th>晚餐（家庭自制）</th></tr>
-        <tr><td>周一</td><td>黑芝麻燕麦粥 + 猕猴桃</td><td rowspan="7" style="text-align:center;color:var(--accent);font-weight:600;">Rolin全营养抗炎控糖午餐<br><span style="font-size:11px;color:var(--text-secondary);">30天不重样 · 食物轮替</span></td><td>三文鱼 + 羽衣甘蓝沙拉 + 烤红薯</td></tr>
+        <tr><th>天</th><th>早餐</th><th>午餐</th><th>晚餐（家庭自制建议）</th></tr>
+        <tr><td>周一</td><td>黑芝麻燕麦粥 + 猕猴桃</td><td rowspan="7" style="text-align:center;color:var(--accent);font-weight:600;vertical-align:middle;">Rolin全营养<br>抗炎控糖午餐<br><span style="font-size:10px;color:var(--text-secondary);font-weight:400;">30天不重样 · 食物轮替</span></td><td>三文鱼 + 羽衣甘蓝沙拉 + 烤红薯</td></tr>
         <tr><td>周二</td><td>红枣燕麦粥 + 肉桂粉</td><td>鸡胸肉 + 西兰花 + 藜麦</td></tr>
         <tr><td>周三</td><td>山药红枣小米粥 + 鸡蛋</td><td>牛肉片 + 混合蔬菜 + 糙米</td></tr>
         <tr><td>周四</td><td>鹰嘴豆泥 + 姜黄奶 + 巴西坚果 1 颗</td><td>沙丁鱼 + 菠菜 + 土豆</td></tr>
         <tr><td>周五</td><td>蒸紫薯 + 蒸山药 + 鸡蛋</td><td>鸡腿肉 + 芦笋 + 红薯</td></tr>
         <tr><td>周六</td><td>银耳百合莲子羹 + 猕猴桃</td><td>牡蛎/蛤蜊 + 海带汤 + 杂粮饭</td></tr>
-        <tr><td>周日</td><td>红豆花生粥 + 动物肝脏（每周1次）</td><td>羊肉 + 深绿色蔬菜 + 山药</td></tr>
+        <tr><td>周日</td><td>红豆花生粥 + 动物肝脏（每周 1 次）</td><td>羊肉 + 深绿色蔬菜 + 山药</td></tr>
       </table>
     </div>
-    <p style="font-size:12px;color:var(--text-secondary);">下午加餐：杏仁 + 黑巧克力 70%+  /  希腊酸奶 + 蓝莓  /  蒸南瓜</p>
-  </div>
-</section>
-
-<!-- Chapter 7 -->
-<section class="sec">
-  <div class="container">
-    <div class="sec-num">第七章</div>
-    <h2>关键营养素速查表</h2>
-
-    <span class="detail-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'收起 ▲':'展开 ▼'">展开 ▼</span>
-    <div class="detail-content">
-      <h4 style="font-size:13px;margin:14px 0 8px;color:var(--accent);">B 族（能量代谢核心辅因子）</h4>
-      <div class="table-wrap">
-        <table>
-          <tr><th>营养素</th><th>一句话</th><th>前 5 食物</th></tr>
-          <tr><td>B1</td><td>TCA 两个脱氢酶</td><td>葵花籽、猪肉、燕麦、扁豆</td></tr>
-          <tr><td>B2</td><td>ETC 复合体 I/II</td><td>牛肝、鸡蛋、杏仁、蘑菇、菠菜</td></tr>
-          <tr><td>B3</td><td>NAD⁺——200+ 脱氢酶辅酶</td><td>金枪鱼、鸡胸肉、花生、糙米</td></tr>
-          <tr><td>B5</td><td>CoA 前体→肾上腺类固醇</td><td>牛肝、葵花籽、牛油果、鸡蛋</td></tr>
-          <tr><td>B6</td><td>140+ 酶包括所有转氨酶</td><td>鹰嘴豆、金枪鱼、鸡胸肉、香蕉</td></tr>
-          <tr><td>B12</td><td>甲基化+红细胞+髓鞘</td><td>蛤蜊、羊肝、贻贝、鲭鱼</td></tr>
-        </table>
-      </div>
-
-      <h4 style="font-size:13px;margin:14px 0 8px;color:var(--accent);">矿物质（ETC 催化中心）</h4>
-      <div class="table-wrap">
-        <table>
-          <tr><th>营养素</th><th>一句话</th><th>前 5 食物</th></tr>
-          <tr><td>铁</td><td>细胞色素/O₂/DA 合成</td><td>动物肝脏、蛤蜊、牛肉、菠菜</td></tr>
-          <tr><td>镁</td><td>Mg-ATP 是 ATP 活性形式</td><td>南瓜籽、杏仁、菠菜、黑巧克力</td></tr>
-          <tr><td>锌</td><td>300+ 酶 + 2000+ 锌指蛋白</td><td>牡蛎、牛肉、南瓜籽、芝麻</td></tr>
-          <tr><td>硒</td><td>甲状腺脱碘酶 + GPX</td><td>巴西坚果（1颗/日）、金枪鱼、沙丁鱼</td></tr>
-          <tr><td>铜</td><td>ETC 复合体 IV + DA→NE</td><td>牛肝、牡蛎、芝麻、黑巧克力</td></tr>
-        </table>
-      </div>
-
-      <h4 style="font-size:13px;margin:14px 0 8px;color:var(--accent);">脂肪酸与抗氧化</h4>
-      <div class="table-wrap">
-        <table>
-          <tr><th>营养素</th><th>一句话</th><th>前 5 食物</th></tr>
-          <tr><td>EPA/DHA</td><td>SPM 消退信号→主动终止炎症</td><td>鲭鱼、三文鱼、沙丁鱼、凤尾鱼、贻贝</td></tr>
-          <tr><td>VE</td><td>膜抗氧化→阻断 ROS→NF-κB</td><td>葵花籽、杏仁、牛油果、菠菜</td></tr>
-          <tr><td>VC</td><td>细胞质抗氧化+肾上腺+胶原</td><td>针叶樱桃、猕猴桃、黄甜椒、西兰花</td></tr>
-          <tr><td>辅酶 Q10</td><td>ETC I/II→III 电子桥</td><td>牛心、沙丁鱼、牛肉、西兰花</td></tr>
-        </table>
-      </div>
+    <div class="snack-note">
+      <strong>下午加餐</strong>（如果疲劳在下午加重）：<br>
+      · 杏仁 + 黑巧克力 70%+<br>
+      · 或一小杯希腊酸奶 + 蓝莓<br>
+      · 或蒸南瓜一小块
     </div>
   </div>
 </section>
 
-<!-- Chapter 8 -->
+<!-- 五、营养素速查 -->
 <section class="sec">
   <div class="container">
-    <div class="sec-num">第八章</div>
-    <h2>不要做的事</h2>
-    <p class="sec-subtitle">和吃一样重要。</p>
+    <h2>五、关键营养素 + 高含量食物速查表</h2>
+    <p class="sec-intro">以下表帮你快速定位「某种营养素该吃什么」。已按临床价值排序。</p>
 
+    <h4 style="font-size:13px;color:var(--accent);margin:14px 0 8px;">B 族（能量代谢核心辅因子）</h4>
     <div class="table-wrap">
       <table>
-        <tr><th style="width:30px;">#</th><th>不要</th><th>原因</th></tr>
-        <tr><td>1</td><td>空腹喝咖啡</td><td>皮质醇脉冲 → HPA 轴被反复透支</td></tr>
-        <tr><td>2</td><td>下午 2 点后喝咖啡</td><td>咖啡因半衰期 5-6 小时 → 干扰入睡</td></tr>
-        <tr><td>3</td><td>晚餐太晚或太重</td><td>消化系统加班 → 核心体温不降 → 睡眠质量打折</td></tr>
-        <tr><td>4</td><td>单吃碳水</td><td>血糖尖峰 → 胰岛素超额 → 疲劳反弹</td></tr>
-        <tr><td>5</td><td>白天超过 4-5 小时不进食</td><td>血糖下降 → 皮质醇上升 → 肾上腺被反复消耗</td></tr>
-        <tr><td>6</td><td>睡前刷手机</td><td>蓝光抑制褪黑素 → 入睡困难</td></tr>
-        <tr><td>7</td><td>疲劳时强行高强度运动</td><td>线粒体型疲劳→剧烈运动后恢复极慢→先走路</td></tr>
+        <tr><th>营养素</th><th>一句话功能</th><th>前 5 食物</th></tr>
+        <tr><td>B1</td><td>TCA 两个脱氢酶</td><td>葵花籽、猪肉、燕麦、扁豆、火腿</td></tr>
+        <tr><td>B2</td><td>ETC 复合体 I/II</td><td>牛肝、鸡蛋、杏仁、蘑菇、菠菜</td></tr>
+        <tr><td>B3</td><td>NAD⁺——200+ 脱氢酶辅酶</td><td>金枪鱼、鸡胸肉、花生、糙米、蘑菇</td></tr>
+        <tr><td>B5</td><td>辅酶 A 前体→肾上腺类固醇</td><td>牛肝、葵花籽、香菇、牛油果、鸡蛋</td></tr>
+        <tr><td>B6</td><td>140+ 酶包括所有转氨酶</td><td>鹰嘴豆、金枪鱼、鸡胸肉、香蕉、土豆</td></tr>
+        <tr><td>B12</td><td>甲基化+红细胞+髓鞘</td><td>蛤蜊、羊肝、贻贝、鲭鱼、营养酵母</td></tr>
+      </table>
+    </div>
+
+    <h4 style="font-size:13px;color:var(--accent);margin:14px 0 8px;">矿物质（ETC 催化中心）</h4>
+    <div class="table-wrap">
+      <table>
+        <tr><th>营养素</th><th>一句话功能</th><th>前 5 食物</th></tr>
+        <tr><td>铁</td><td>细胞色素/O₂/DA 合成</td><td>动物肝脏、蛤蜊、牛肉、菠菜、芝麻</td></tr>
+        <tr><td>镁</td><td>Mg-ATP 是 ATP 活性形式</td><td>南瓜籽、杏仁、菠菜、黑豆、黑巧克力</td></tr>
+        <tr><td>锌</td><td>300+ 酶 + 2000+ 锌指蛋白</td><td>牡蛎、小麦胚芽、牛肉、南瓜籽、芝麻</td></tr>
+        <tr><td>硒</td><td>甲状腺脱碘酶 + GPX</td><td>巴西坚果（1 颗/日已足）、金枪鱼、沙丁鱼</td></tr>
+        <tr><td>铜</td><td>复合体 IV + DA→NE</td><td>牛肝、牡蛎、芝麻、黑巧克力、蘑菇</td></tr>
+      </table>
+    </div>
+
+    <h4 style="font-size:13px;color:var(--accent);margin:14px 0 8px;">脂肪酸与抗氧化</h4>
+    <div class="table-wrap">
+      <table>
+        <tr><th>营养素</th><th>一句话功能</th><th>前 5 食物</th></tr>
+        <tr><td>EPA/DHA</td><td>SPM 消退信号→终止炎症</td><td>鲭鱼、三文鱼、沙丁鱼、凤尾鱼、贻贝</td></tr>
+        <tr><td>VE</td><td>膜抗氧化→阻断 ROS→NF-κB</td><td>葵花籽、杏仁、榛子、牛油果、菠菜</td></tr>
+        <tr><td>VC</td><td>细胞质抗氧化+肾上腺+胶原</td><td>针叶樱桃、番石榴、黄甜椒、猕猴桃、西兰花</td></tr>
       </table>
     </div>
   </div>
 </section>
 
-<!-- Timeline -->
+<!-- 六、不要做的事 -->
 <section class="sec">
   <div class="container">
-    <h2 style="margin-bottom:16px;">预期效果时间线</h2>
-    <div class="timeline">
-      <div class="tl-item"><div class="tl-time">第 1-3 天</div><div class="tl-text">饭后困意减轻，下午不再"断电"</div></div>
+    <h2>六、不要做的事</h2>
+    <p class="sec-intro">和吃一样重要。</p>
+    <div class="table-wrap">
+      <table class="dont-table">
+        <tr><th>#</th><th>不要</th><th>原因</th></tr>
+        <tr><td>1</td><td>空腹喝咖啡</td><td>皮质醇脉冲 → HPA 轴已经在被过度使用</td></tr>
+        <tr><td>2</td><td>下午 3 点以后喝咖啡</td><td>咖啡因半衰期 5-6 小时 → 晚上 9 点还有一半在系统里 → 干扰入睡</td></tr>
+        <tr><td>3</td><td>晚餐太晚或太重</td><td>消化系统加班 → 核心体温不降 → 睡眠质量打折</td></tr>
+        <tr><td>4</td><td>单吃碳水</td><td>甜食/白面包/白米饭单吃 → 血糖尖峰 → 胰岛素超额 → 血糖骤降 → 疲劳反弹</td></tr>
+        <tr><td>5</td><td>白天长时间不进食</td><td>超过 4-5 小时不吃 → 血糖下降 → 皮质醇上升 → 肾上腺被反复消耗</td></tr>
+        <tr><td>6</td><td>睡前刷手机</td><td>蓝光抑制褪黑素 → 你的入睡困难有一部分是屏幕驱动的</td></tr>
+        <tr><td>7</td><td>高强度运动</td><td>如果你的疲劳是线粒体型，剧烈运动后恢复极慢 → 先走路，别跑</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 预期效果时间线 -->
+<section class="sec">
+  <div class="container">
+    <h2>预期效果时间线</h2>
+    <div class="timeline" style="margin-top:14px;">
+      <div class="tl-item"><div class="tl-time">第 1-3 天</div><div class="tl-text">饭后困意减轻，下午不再「断电」</div></div>
       <div class="tl-item"><div class="tl-time">第 1 周</div><div class="tl-text">半夜醒的次数减少，早上起床容易一点</div></div>
       <div class="tl-item"><div class="tl-time">第 2 周</div><div class="tl-text">脑子开始变清晰，下午能思考了</div></div>
       <div class="tl-item"><div class="tl-time">第 4 周</div><div class="tl-text">精力有底了，不再每天靠意志力撑</div></div>
       <div class="tl-item"><div class="tl-time">第 8 周</div><div class="tl-text">运动后恢复速度变快，不再酸 3 天</div></div>
-      <div class="tl-item"><div class="tl-time">第 12 周</div><div class="tl-text">身体进入新基线——你不再觉得自己"有病"，只是正常</div></div>
+      <div class="tl-item"><div class="tl-time">第 12 周</div><div class="tl-text">身体进入新基线——你不再觉得自己「有病」，只是正常</div></div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="sec">
-  <div class="container">
-    <div class="cta">
-      <h3>从改变一顿午餐开始</h3>
-      <p>真正的抗疲劳，不是靠咖啡刺激身体，而是通过饮食给身体提供制造能量的原料，让线粒体、血糖系统、肠道生态和压力系统重新恢复平衡。</p>
-      <a href="https://rolin-kitchen.pages.dev/" class="btn">🧬 完成人体功能系统健康自测</a>
-      <p style="margin-top:14px;font-size:12px;color:var(--text-secondary);">获取属于你的个性化饮食干预方案</p>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
 <div class="footer">
   <strong>Rolin的功能营养厨房</strong> · 功能医学营养主理人<br>
-  用功能医学原理，把工位变成养生局<br><br>
-  <span style="color:var(--text-tertiary);">此指南为功能医学框架下的抗疲劳饮食建议，不替代医疗诊断。<br>如执行 4 周后疲劳感无明显改善，请及时就医排查贫血、甲状腺疾病等问题。</span>
+  这份指南不是医学诊断，是饮食干预方案。<br>
+  疲劳是你的身体在说「能量网络有瓶颈」——找到瓶颈，用食物提供原料，让你的线粒体重新正常生产 ATP。<br><br>
+  <a href="https://rolin-kitchen.pages.dev/" class="cta">🧬 如需个性化方案，完成人体功能系统健康自测</a>
 </div>
 
 </body>
