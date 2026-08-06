@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rolin的功能营养厨房 · 定价海报</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+  background: #e8e4df; display: flex; justify-content: center;
+  padding: 20px; -webkit-font-smoothing: antialiased;
+}
+.poster {
+  width: 750px; height: 1000px; background: #faf9f6;
+  position: relative; overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+/* Header */
+.header { text-align: center; padding: 36px 48px 0; }
+.badge {
+  display: inline-block; background: #b8754a; color: #fff;
+  font-size: 14px; font-weight: 600; padding: 6px 20px; border-radius: 20px;
+  letter-spacing: 1px; margin-bottom: 18px;
+}
+.header h1 { font-size: 34px; font-weight: 700; color: #b8754a; letter-spacing: 2px; }
+.header .tagline { font-size: 18px; color: #888; margin-top: 6px; font-weight: 500; }
+.header .divider {
+  width: 80px; height: 2px; background: #b8754a;
+  margin: 18px auto 0; border-radius: 1px;
+}
+
+/* Section title */
+.sec-title {
+  font-size: 24px; font-weight: 700; color: #2c2c2c;
+  padding: 0 48px; margin-top: 24px;
+}
+
+/* Pricing cards */
+.cards { display: flex; gap: 12px; padding: 16px 48px; }
+.card {
+  flex: 1; background: #fff; border-radius: 14px; border: 1px solid #e8e4df;
+  padding: 18px 12px; text-align: center; position: relative;
+}
+.card-header {
+  background: #f5ede6; border-radius: 8px; padding: 6px 0;
+  font-size: 16px; font-weight: 700; color: #b8754a; margin-bottom: 14px;
+}
+.card .old-price { font-size: 13px; color: #aaa; text-decoration: line-through; margin-bottom: 6px; }
+.card .label { font-size: 12px; color: #b8754a; font-weight: 600; margin-bottom: 4px; }
+.card .price-main { font-size: 28px; font-weight: 700; color: #2c2c2c; }
+.card .price-highlight { font-size: 40px; font-weight: 800; color: #6a9b7d; }
+.card .unit { font-size: 16px; font-weight: 500; color: #6a9b7d; }
+.card .or { font-size: 13px; color: #aaa; margin: 2px 0; }
+.card-tag {
+  display: inline-block; padding: 3px 14px; border-radius: 12px;
+  font-size: 11px; font-weight: 600; margin-top: 10px;
+}
+.tag-green { background: #6a9b7d; color: #fff; }
+.tag-accent { background: #b8754a; color: #fff; }
+.hot-badge {
+  position: absolute; top: -6px; right: 8px;
+  background: #c46e3b; color: #fff; font-size: 11px; font-weight: 700;
+  padding: 3px 10px; border-radius: 10px;
+}
+
+/* Refund */
+.refund {
+  margin: 0 48px; background: #f5ede6; border-radius: 10px;
+  padding: 8px 16px; font-size: 13px; color: #888;
+  text-align: center;
+}
+
+/* Delivery */
+.delivery-card {
+  margin: 16px 48px; background: #fff; border-radius: 14px;
+  border: 1px solid #e8e4df; padding: 20px 24px;
+}
+.delivery-card h3 { font-size: 20px; font-weight: 700; color: #2c2c2c; margin-bottom: 4px; }
+.delivery-card .free-zones { font-size: 16px; color: #b8754a; font-weight: 600; margin-bottom: 2px; }
+.delivery-card .free-note { font-size: 13px; color: #888; margin-bottom: 16px; }
+.delivery-divider { border: none; border-top: 1px solid #e8e4df; margin: 0 0 14px; }
+.delivery-card .other-title { font-size: 20px; font-weight: 700; color: #2c2c2c; margin-bottom: 12px; }
+
+.rule-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.rule-num {
+  width: 36px; height: 36px; border-radius: 50%; background: #f5ede6;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 700; color: #b8754a; flex-shrink: 0;
+}
+.rule-text { font-size: 16px; color: #2c2c2c; }
+
+/* CTA */
+.cta {
+  margin: 16px 48px; background: #e8e4df; border-radius: 14px;
+  padding: 14px 20px; text-align: center;
+}
+.cta .cta-main { font-size: 18px; font-weight: 700; color: #444; margin-bottom: 2px; }
+.cta .cta-sub { font-size: 13px; color: #888; }
+
+/* Footer */
+.footer {
+  text-align: center; padding: 12px 48px 0;
+  font-size: 13px; color: #aaa;
+}
+</style>
+</head>
+<body>
+
+<div class="poster">
+  <!-- Header -->
+  <div class="header">
+    <div class="badge">Rolin的功能营养厨房</div>
+    <h1>抗炎控糖 · 30天不重样</h1>
+    <p class="tagline">把工位变成养生局</p>
+    <div class="divider"></div>
+  </div>
+
+  <!-- 尝鲜与卡项 -->
+  <p class="sec-title">🍽️  尝鲜与卡项优惠</p>
+
+  <div class="cards">
+    <!-- 单餐 -->
+    <div class="card">
+      <div class="card-header">单  餐</div>
+      <div class="old-price">原价 25 元</div>
+      <div class="label">首次尝鲜价</div>
+      <div class="price-highlight">18.8</div>
+      <div class="unit" style="margin-top:-4px;">元</div>
+      <div class="card-tag tag-green" style="margin-top:8px;">新人专享</div>
+    </div>
+
+    <!-- 7天周卡 -->
+    <div class="card">
+      <div class="card-header">7 天 周 卡</div>
+      <div class="old-price">原价 175 元</div>
+      <div class="label">福利二选一</div>
+      <div class="price-main">直降 15 元</div>
+      <div class="or">或</div>
+      <div class="price-main">赠送 1 餐</div>
+      <div class="card-tag tag-accent">2周内有效</div>
+    </div>
+
+    <!-- 30天月卡 -->
+    <div class="card">
+      <div class="hot-badge">推荐</div>
+      <div class="card-header">30 天 月 卡</div>
+      <div class="old-price">原价 750 元</div>
+      <div class="label">福利二选一</div>
+      <div class="price-main">直降 90 元</div>
+      <div class="or">或</div>
+      <div class="price-main">赠送 5 餐</div>
+      <div class="card-tag tag-accent">2个月内有效</div>
+    </div>
+  </div>
+
+  <!-- 退款 -->
+  <div class="refund">
+    💡 退款说明：周卡与月卡支持随时退款，需退回已享受的相关优惠折扣。
+  </div>
+
+  <!-- 配送 -->
+  <p class="sec-title">🚚  配送说明</p>
+
+  <div class="delivery-card">
+    <h3>🆓  免配送费专区</h3>
+    <p class="free-zones">双云里 · 山汐云亭 · 和安居 · 云谷园区</p>
+    <p class="free-note">任意购买即免配送费</p>
+    <hr class="delivery-divider">
+    <h3 class="other-title">📍  其他地区</h3>
+    <div class="rule-row">
+      <div class="rule-num">39</div>
+      <div class="rule-text">元起送</div>
+    </div>
+    <div class="rule-row">
+      <div class="rule-num">3</div>
+      <div class="rule-text">公里内 — 满额免配送费</div>
+    </div>
+    <div class="rule-row">
+      <div class="rule-num">3</div>
+      <div class="rule-text">公里外 — 每增加 1 公里加收 2 元配送费</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <p class="cta-main">📱 扫码添加 Rolin，获取免费饮食建议</p>
+    <p class="cta-sub">首次尝鲜仅需 18.8 元  |  30天不重样抗炎控糖午餐</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Rolin的功能营养厨房  ·  抗炎控糖  ·  把工位变成养生局
+  </div>
+</div>
+
+</body>
+</html>
