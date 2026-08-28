@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7天不重样营养餐 | Rolin的功能营养厨房</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+  background: #e8e4df; display: flex; justify-content: center;
+  padding: 20px; -webkit-font-smoothing: antialiased;
+}
+.poster {
+  width: 750px; background: #faf9f6;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  text-align: center; padding: 40px 48px 28px;
+  background: linear-gradient(165deg, #f5ede6 0%, #faf9f6 60%, #edf3ee 100%);
+}
+.badge {
+  display: inline-block; background: #b8754a; color: #fff;
+  font-size: 13px; font-weight: 600; padding: 5px 18px; border-radius: 18px;
+  letter-spacing: 1px; margin-bottom: 16px;
+}
+.header h1 {
+  font-size: 34px; font-weight: 700; color: #2c2c2c;
+  letter-spacing: 3px; line-height: 1.3;
+}
+.header .subtitle {
+  font-size: 20px; color: #b8754a; font-weight: 600;
+  margin-top: 10px; letter-spacing: 1px;
+}
+.header .divider {
+  width: 60px; height: 2px; background: #b8754a;
+  margin: 18px auto 0; border-radius: 1px;
+}
+
+/* Image grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 20px 24px;
+}
+.cell {
+  position: relative; overflow: hidden; border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.cell img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.3s;
+}
+.cell:hover img { transform: scale(1.05); }
+.day-tag {
+  position: absolute; top: 8px; left: 8px;
+  background: rgba(184,117,74,0.9); color: #fff;
+  font-size: 11px; font-weight: 700; padding: 3px 10px;
+  border-radius: 10px; letter-spacing: 0.5px;
+}
+/* Row 1: 4 images */
+.row1 .cell { aspect-ratio: 1 / 1; }
+/* Row 2: 3 images centered */
+.row2 {
+  display: flex; justify-content: center; gap: 12px;
+  padding: 0 24px 24px;
+}
+.row2 .cell {
+  width: calc((100% - 24px * 2 - 12px * 2) / 3);
+  aspect-ratio: 1 / 1;
+}
+
+/* Footer */
+.footer {
+  text-align: center; padding: 18px 48px 28px;
+  font-size: 13px; color: #aaa; line-height: 1.8;
+}
+.footer strong { color: #b8754a; }
+</style>
+</head>
+<body>
+
+<div class="poster">
+  <!-- Header -->
+  <div class="header">
+    <div class="badge">Rolin的功能营养厨房</div>
+    <h1>7天不重样营养餐</h1>
+    <p class="subtitle">能量轻食碗 + 五谷丰登南瓜碗</p>
+    <div class="divider"></div>
+  </div>
+
+  <!-- Row 1: 4 images -->
+  <div class="grid row1">
+    <div class="cell">
+      <img src="7day/7天不重样营养餐01.jpg" alt="第1天">
+      <span class="day-tag">DAY 1</span>
+    </div>
+    <div class="cell">
+      <img src="7day/7天不重样营养餐02.jpg" alt="第2天">
+      <span class="day-tag">DAY 2</span>
+    </div>
+    <div class="cell">
+      <img src="7day/7天不重样营养餐03.jpg" alt="第3天">
+      <span class="day-tag">DAY 3</span>
+    </div>
+    <div class="cell">
+      <img src="7day/7天不重样营养餐04.jpg" alt="第4天">
+      <span class="day-tag">DAY 4</span>
+    </div>
+  </div>
+
+  <!-- Row 2: 3 images centered -->
+  <div class="row2">
+    <div class="cell">
+      <img src="7day/7天不重样营养餐05.jpg" alt="第5天">
+      <span class="day-tag">DAY 5</span>
+    </div>
+    <div class="cell">
+      <img src="7day/7天不重样营养餐06.jpg" alt="第6天">
+      <span class="day-tag">DAY 6</span>
+    </div>
+    <div class="cell">
+      <img src="7day/7天不重样营养餐07.jpg" alt="第7天">
+      <span class="day-tag">DAY 7</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <strong>Rolin的功能营养厨房</strong> · 抗炎控糖 · 30天不重样<br>
+    把工位变成养生局
+  </div>
+</div>
+
+</body>
+</html>
